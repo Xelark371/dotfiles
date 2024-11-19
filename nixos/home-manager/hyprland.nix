@@ -10,7 +10,7 @@
       xwayland.enable = true;
 
       settings = {
-        
+
         general = {
           border_size = 0;
           no_border_on_floating = true;
@@ -72,7 +72,7 @@
           10)
         );
 
-        monitor = ",1920x1080@60, 0x0, 1";
+        monitor = "eDP-1,1920x1080@60, 0x0, 1";
 
       };
     };
