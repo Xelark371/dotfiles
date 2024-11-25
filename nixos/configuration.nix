@@ -3,7 +3,7 @@
 {
   imports = [
       ./hardware-configuration.nix
-      ./home-manager/home-manager.nix
+      ./home-manager/home.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -28,10 +28,17 @@
     defaultSession = "hyprland";
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  # for the 24.11 version (see hyprland.nix l7 (systemd.enable))
+  #programs.uwsm = {
+  #  enable = true;
+  #  waylandCompositors.hyprland = {
+  #    binPath = "/run/current-system/sw/bin/Hyprland";
+  #    comment = "Hyprland session managed by uwsm";
+  #    prettyName = "Hyprland";
+  #  };
+  #};
+
+  programs.hyprland.enable = true;
 
   zramSwap = {
     enable = true;
@@ -43,7 +50,6 @@
     noto-fonts-cjk
     noto-fonts-emoji
     font-awesome
-  #  (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
 
   services.printing.enable = true;
@@ -64,24 +70,32 @@
   users.extraUsers.max = {
       isNormalUser = true;
       home = "/home/max";
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+      ];
   };
 
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     hyprland
+    pamixer
+    brightnessctl
+    xarchiver
+    nodejs_22
+    python3
     xdg-desktop-portal-hyprland
     wl-clipboard
     wofi
     waybar
     polkit
-    swww
     dunst
-    libnotify
+    #libnotify
     gcc
 
     alacritty
+    discord
     firefox
     spotify
     vscode
@@ -92,6 +106,13 @@
     pcmanfm
     libreoffice
   ];
+
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+    NIXOS_OZONE_WL = "1";
+
+  };
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

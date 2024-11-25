@@ -7,6 +7,9 @@ in
 {
 	imports = [
 		(import "${home-manager}/nixos")
+		../apps/wofi.nix
+		../apps/vscode.nix
+		./background-image/hyprpaper.nix
 		./hyprland.nix
 	];
 
@@ -23,36 +26,55 @@ in
 			enable = true;
 
 			theme = {
-				package = pkgs.flat-remix-gtk;
-				name = "Flat-Remix-GTK-Grey-Darkest";
+				package = pkgs.vimix-gtk-themes;
+				name = "vimix-dark-doder";
 			};
 
 			iconTheme = {
-				package = pkgs.gnome.adwaita-icon-theme;
-				name = "Adwaita";
-			};
-
-			font = {
-				name = "Sans";
-				size = 11;
+				package = pkgs.dracula-icon-theme;
+				name = "Dracula";
 			};
 		};
 
+		qt = {
+      enable = true;
+      platformTheme.name = "qtct";
+      style = {
+        name = "Vimix-Dark-Doder";
+        package = pkgs.libsForQt5.qtstyleplugin-kvantum;
+      };
+    };
+
 		home = {
 			pointerCursor = {
-				package = pkgs.bibata-cursors;
-				name = "Bibata-Modern-Classic";
-				size = 12;
 				gtk.enable = true;
+				package = pkgs.phinger-cursors;
+				name = "phinger-cursors-dark";
+				size = 24;
 			};
 
+			packages = with pkgs; [
+				libsForQt5.qtstyleplugin-kvantum
+				qt5.qtbase
+				qt5ct
+				vimix-gtk-themes
+			];
+
 			sessionVariables = {
-				WLR_NO_HARDWARE_CURSORS = "1";
-  			NIXOS_OZONE_WL = "1";
+				XCURSOR_SIZE = "24";
 			};
 
 			stateVersion = "24.05";
 		};
 
+		xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
+      [General]
+      theme=Vimix-Dark-Doder
+    '';
+
+		xdg.configFile."qt5ct/qt5ct.conf".text = ''
+      [Appearance]
+      style=kvantum
+    '';
 	};
 }
