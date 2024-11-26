@@ -10,6 +10,7 @@ in
 		../apps/wofi.nix
 		../apps/vscode.nix
 		./background-image/hyprpaper.nix
+		./background-image/hyprlock.nix
 		./hyprland.nix
 	];
 

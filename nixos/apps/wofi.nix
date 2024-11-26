@@ -1,8 +1,6 @@
-{ config, pkgs, lib, ... }:
 {
   home-manager.users.max.programs.wofi = {
     enable = true;
-    package = pkgs.wofi;
     settings = {
       show = "drun";
       width = 600;

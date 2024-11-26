@@ -1,16 +1,27 @@
 { config, lib, pkgs, ... }:
-
 {
   imports = [
       ./hardware-configuration.nix
       ./home-manager/home.nix
     ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 10;
+      };
+    };
+  };
 
-  networking.hostName = "max-nix";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "maxPC";
+    networkmanager = {
+      enable = true;
+      wifi.powersave = true;
+    };
+  };
 
   time.timeZone = "Europe/Paris";
 
@@ -22,21 +33,21 @@
 
   console.keyMap = "fr";
 
-  services.displayManager = {
-    sddm.enable = true;
-    sddm.wayland.enable = true;
-    defaultSession = "hyprland";
-  };
-
-  # for the 24.11 version (see hyprland.nix l7 (systemd.enable))
-  #programs.uwsm = {
-  #  enable = true;
-  #  waylandCompositors.hyprland = {
-  #    binPath = "/run/current-system/sw/bin/Hyprland";
-  #    comment = "Hyprland session managed by uwsm";
-  #    prettyName = "Hyprland";
-  #  };
+  #services.displayManager = {
+  #  sddm.enable = true;
+  #  sddm.wayland.enable = true;
+  #  defaultSession = "hyprland";
   #};
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "Hyprland";
+        user = "max";
+      };
+    };
+  };
 
   programs.hyprland.enable = true;
 
@@ -91,15 +102,14 @@
     waybar
     polkit
     dunst
-    #libnotify
     gcc
 
     alacritty
-    discord
     firefox
-    spotify
-    vscode
     neofetch
+    vscode
+    discord
+    spotify
     htop
     brightnessctl
     networkmanagerapplet
@@ -111,6 +121,7 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     MOZ_ENABLE_WAYLAND = "1";
     NIXOS_OZONE_WL = "1";
+    XDG_CURRENT_DESKTOP = "Hyprland";
 
   };
 

@@ -1,7 +1,5 @@
-{ pkgs, ... }:
 {
   home-manager.users.max.services.hyprpaper = {
-    package = pkgs.hyprpaper;
     enable = true;
     settings = {
       ipc = "on";

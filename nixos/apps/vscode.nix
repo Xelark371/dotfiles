@@ -1,12 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   home-manager.users.max = {
     programs.vscode = {
       enable = true;
-      package = pkgs.vscode;
+      enableUpdateCheck = false;
+      enableExtensionUpdateCheck = false;
+
       extensions = with pkgs.vscode-extensions; [
 
       ];
+      
+      package = pkgs.vscode;
     };
   };
 }

@@ -9,7 +9,7 @@
     wayland.windowManager.hyprland = {
       enable = true;
       package = pkgs.hyprland;
-      systemd.enable = true; # set to false for uwsm compatibility at the 24.11 version
+      systemd.enable = true;
       xwayland.enable = true;
 
       settings = {
@@ -17,6 +17,7 @@
         exec-once = [
           "waybar"
           "hyprpaper"
+          "hyprlock"
         ];
 
         general = {
@@ -69,7 +70,7 @@
           "$mod, Q, exec, $terminal"
           "$mod, D, exec, $menu"
           "$mod, C, killactive,"
-          "$mod, M, exit,"
+          "$mod, L, exec, hyprlock && hyprctl cursor set-zoom-factor 0"
           "$mod, V, togglefloating,"
           
           ", XF86AudioRaiseVolume, exec, pamixer -i 5"
