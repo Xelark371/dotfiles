@@ -28,7 +28,7 @@
         {
           monitor = "";
           text = "$TIME";
-          color = "rgba(0, 0, 0, 1.0)";
+          color = "rgba(255, 255, 255, 1.0)";
           font_size = 85;
           position = "0, 350";
           halign = "center";
@@ -38,7 +38,7 @@
         {
           monitor = "";
           text = "$USER";
-          color = "rgba(0, 0, 0, 1.0)";
+          color = "rgba(255, 255, 255, 1.0)";
           font_size = 25;
           position = "0, -140";
           halign = "center";
