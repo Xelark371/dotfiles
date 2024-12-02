@@ -12,6 +12,7 @@ in
 		./background-image/hyprpaper.nix
 		./background-image/hyprlock.nix
 		./hyprland.nix
+		./hypridle.nix
 	];
 
 	home-manager.backupFileExtension = "backup";

@@ -11,7 +11,7 @@
       ];
 
       wallpaper = [
-        "eDP-1, ${./image.jpeg}"
+        ", ${./image.jpeg}"
       ];
     };
   };

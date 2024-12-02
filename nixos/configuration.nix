@@ -23,6 +23,11 @@
     };
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   time.timeZone = "Europe/Paris";
 
   # Configure network proxy if necessary
@@ -64,6 +69,12 @@
   ];
 
   services.printing.enable = true;
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # Enable sound.
   # hardware.pulseaudio.enable = true;
@@ -127,6 +138,8 @@
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  system.autoUpgrade.enable = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix).

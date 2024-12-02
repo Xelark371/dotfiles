@@ -4,6 +4,7 @@
     
     home.packages = with pkgs; [
       hyprlock
+      hypridle
     ];
 
     wayland.windowManager.hyprland = {
@@ -15,9 +16,10 @@
       settings = {
 
         exec-once = [
+          "hyprlock"
           "waybar"
           "hyprpaper"
-          "hyprlock"
+          "hypridle"
         ];
 
         general = {
@@ -62,7 +64,7 @@
         "$mod" = "SUPER";
         "$terminal" = "alacritty";
         "$filemanager" = "pcmanfm";
-        "$menu" = "wofi";
+        "$menu" = "pidof wofi || wofi";
 
         bind =
         [
@@ -97,7 +99,10 @@
           "$mod, mouse:273, resizewindow"
         ];
 
-        monitor = "eDP-1,1920x1080@60, 0x0, 1.25";
+        monitor = [
+          "eDP-1, highres, auto, 1.25"
+          ", highrr, auto-up, 1"
+        ];
       };
     };
   };
