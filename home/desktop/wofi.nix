@@ -1,5 +1,5 @@
 {
-  home-manager.users.max.programs.wofi = {
+  programs.wofi = {
     enable = true;
     settings = {
       show = "drun";

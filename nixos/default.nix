@@ -2,7 +2,6 @@
 {
   imports = [
       ./hardware-configuration.nix
-      ./home-manager/home.nix
     ];
 
   boot = {
@@ -63,7 +62,7 @@
 
   fonts.packages = with pkgs; [
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     font-awesome
   ];
@@ -76,10 +75,7 @@
     openFirewall = true;
   };
 
-  # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
-  sound.enable = true;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -100,6 +96,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   environment.systemPackages = with pkgs; [
     hyprland
     pamixer
@@ -112,7 +110,6 @@
     wofi
     waybar
     polkit
-    dunst
     gcc
 
     alacritty
@@ -139,11 +136,9 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  system.autoUpgrade.enable = true;
-
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix).
-  system.copySystemConfiguration = true;
+  system.copySystemConfiguration = false;
   #
   # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
   # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
@@ -159,4 +154,3 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
-

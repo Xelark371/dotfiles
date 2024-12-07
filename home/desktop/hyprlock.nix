@@ -1,5 +1,5 @@
 {
-  home-manager.users.max.programs.hyprlock = {
+  programs.hyprlock = {
     enable = true;
     settings = {
       general = {
