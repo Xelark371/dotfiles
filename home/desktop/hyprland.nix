@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     ./hypridle.nix
@@ -15,25 +15,26 @@
     settings = {
 
       exec-once = [
-        "hyprlock"
+        # "hyprlock"
         "hyprpaper"
         "hypridle"
         "waybar"
+        "hyprlock & (sleep 1 && grimblast copy output)"
       ];
 
       general = {
         border_size = 0;
         no_border_on_floating = true;
-        gaps_in = 1;
-        gaps_out = 0;
+        gaps_in = 2;
+        gaps_out = 5;
         resize_on_border = true;
         extend_border_grab_area = 15; # used when resize_on_border is set to true (15 by default)
         hover_icon_on_border = true; # used when resize_on_border is set to true (true by default)
         allow_tearing = true;
-
       };
 
       decoration = {
+        rounding = 6;
         dim_inactive = true;
         dim_strength = 0.2;
         blur = {
@@ -59,6 +60,8 @@
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
       };
+
+      xwayland.force_zero_scaling = true;
       
       "$mod" = "SUPER";
       "$terminal" = "alacritty";
@@ -71,8 +74,11 @@
         "$mod, Q, exec, $terminal"
         "$mod, D, exec, $menu"
         "$mod, C, killactive,"
-        "$mod, L, exec, hyprlock && hyprctl cursor set-zoom-factor 0"
+        "$mod, L, exec, hyprlock"
         "$mod, V, togglefloating,"
+
+        "$mod, Print, exec, grimblast copy output"
+        "SHIFT, Print, exec, grimblast copy area"
         
         ", XF86AudioRaiseVolume, exec, pamixer -i 5"
         ", XF86AudioLowerVolume, exec, pamixer -d 5"
@@ -81,6 +87,8 @@
 
         ", XF86MonBrightnessUp, exec, brightnessctl set +5%"
         ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+
+        ", XF86PowerOff, exec, pidof wofi || ${config.home.homeDirectory}/.local/bin/powermenu.sh"
       ]
       ++ (
         builtins.concatLists (builtins.genList (i:
@@ -99,7 +107,7 @@
       ];
 
       monitor = [
-        "eDP-1, highres, auto, 1.25"
+        "eDP-1, highres, auto, 1.33"
         ", highrr, auto-up, 1"
       ];
     };

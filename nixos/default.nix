@@ -37,12 +37,6 @@
 
   console.keyMap = "fr";
 
-  #services.displayManager = {
-  #  sddm.enable = true;
-  #  sddm.wayland.enable = true;
-  #  defaultSession = "hyprland";
-  #};
-
   services.greetd = {
     enable = true;
     settings = {
@@ -61,13 +55,22 @@
   };
 
   fonts.packages = with pkgs; [
+    font-awesome
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
-    font-awesome
+    nerd-fonts.ubuntu
   ];
 
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [ 
+      gutenprint
+      epson-escpr
+    ];
+    browsing = true;
+    defaultShared = true;
+  };
 
   services.avahi = {
     enable = true;
@@ -75,7 +78,23 @@
     openFirewall = true;
   };
 
-  hardware.pulseaudio.enable = false;
+  hardware.sane = {
+    enable = true;
+    extraBackends = [ pkgs.epson-escpr ];
+  };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      amdvlk
+      rocmPackages.clr
+      rocmPackages.clr.icd
+    ];
+  };
+
+  hardware.cpu.amd.updateMicrocode = true;
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -94,6 +113,10 @@
       ];
   };
 
+  services.logind.powerKey = "ignore";
+
+  services.postgresql.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -106,11 +129,11 @@
     nodejs_22
     python3
     xdg-desktop-portal-hyprland
-    wl-clipboard
-    wofi
-    waybar
     polkit
     gcc
+    jdk11
+    gimp
+    zlib
 
     alacritty
     firefox
@@ -123,18 +146,18 @@
     networkmanagerapplet
     pcmanfm
     libreoffice
+    prismlauncher
+    steam
   ];
 
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    MOZ_ENABLE_WAYLAND = "1";
-    NIXOS_OZONE_WL = "1";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = with pkgs; [ 
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland 
+    ];
   };
-
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix).

@@ -6,9 +6,16 @@
     enableExtensionUpdateCheck = false;
 
     extensions = with pkgs.vscode-extensions; [
-
+      
     ];
     
+    userSettings = {
+      "code-runner.executorMap" = {
+        "java" = "cd $dir && javac -d ../bin $fileName && java -cp ../bin $fileNameWithoutExt";
+      };
+      "code-runner.runInTerminal" = true;
+    };
+
     package = pkgs.vscode;
   };
 }

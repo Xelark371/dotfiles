@@ -1,19 +1,17 @@
 { config, pkgs, ...}:
-# let
-# 	home-manager = builtins.fetchTarball {
-# 		url = "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-# 		sha256 = "05zi0zbn5spnw8fdw0cf0mak9rwwzx24856ysjyrbgpc8pdv55lb";
-# 	};
-# in
 {
 	imports = [
 		./apps
 		./desktop
 	];
 
+	programs.bash = {
+		enable = true;
+	};
+
 	home.shellAliases = {
-    "nix-rebuild" = "sudo nixos-rebuild switch --flake path:$HOME/Dotfiles";
-  };
+		"nix-rebuild" = "sudo nixos-rebuild switch --flake path:/home/max/Dotfiles";
+	};
 
 	gtk = {
 		enable = true;
@@ -31,7 +29,7 @@
 
 	qt = {
 		enable = true;
-		platformTheme.name = "qtct";
+		platformTheme.name = "q5ct";
 		style = {
 			name = "Vimix-Dark-Doder";
 			package = pkgs.libsForQt5.qtstyleplugin-kvantum;
@@ -51,10 +49,18 @@
 			qt5.qtbase
 			libsForQt5.qt5ct
 			vimix-gtk-themes
+
+			(python3.withPackages (ps: with ps; [
+				tkinter
+			]))
 		];
 
 		sessionVariables = {
 			XCURSOR_SIZE = "24";
+			WLR_NO_HARDWARE_CURSORS = "1";
+			MOZ_ENABLE_WAYLAND = "1";
+			NIXOS_OZONE_WL = "1";
+			APPIMAGE = "1";
 		};
 
 		stateVersion = "24.05";
