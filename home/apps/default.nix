@@ -1,17 +1,6 @@
 {
   imports = [
     ./vscode.nix
+		./git.nix
   ];
-
-  programs.git = {
-		enable = true;
-		userName = "Xelark371";
-		userEmail = "maxencebressel.371@gmail.com";
-
-		extraConfig = {
-			credential = {
-				helper = "store";
-			};
-		};
-	};
 }
