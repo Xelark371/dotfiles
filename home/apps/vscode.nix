@@ -14,6 +14,7 @@
         "java" = "cd $dir && javac -d ../bin $fileName && java -cp ../bin $fileNameWithoutExt";
       };
       "code-runner.runInTerminal" = true;
+      "window.commandCenter" = false;
     };
 
     package = pkgs.vscode;

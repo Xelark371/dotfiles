@@ -134,6 +134,7 @@
     jdk11
     gimp
     zlib
+    devenv
 
     alacritty
     firefox
