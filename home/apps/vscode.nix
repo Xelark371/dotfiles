@@ -2,19 +2,21 @@
 {
   programs.vscode = {
     enable = true;
-    enableUpdateCheck = false;
-    enableExtensionUpdateCheck = false;
+    profiles.default = {
+      enableUpdateCheck = false;
+      enableExtensionUpdateCheck = false;
 
-    extensions = with pkgs.vscode-extensions; [
+      extensions = with pkgs.vscode-extensions; [
+        
+      ];
       
-    ];
-    
-    userSettings = {
-      "code-runner.executorMap" = {
-        "java" = "cd $dir && javac -d ../bin $fileName && java -cp ../bin $fileNameWithoutExt";
+      userSettings = {
+        "code-runner.executorMap" = {
+          "java" = "cd $dir && javac -d ../bin $fileName && java -cp ../bin $fileNameWithoutExt";
+        };
+        "code-runner.runInTerminal" = true;
+        "window.commandCenter" = false;
       };
-      "code-runner.runInTerminal" = true;
-      "window.commandCenter" = false;
     };
 
     package = pkgs.vscode;

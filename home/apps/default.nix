@@ -1,6 +1,6 @@
 {
   imports = [
+    ./git.nix
     ./vscode.nix
-		./git.nix
   ];
 }
