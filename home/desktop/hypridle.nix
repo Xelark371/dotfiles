@@ -20,24 +20,24 @@ in
 
       listener = [
         {
-          timeout = 300;
+          timeout = 600;
           on-timeout = status "brightnessctl -s set 10"; 
           on-resume = "brightnessctl -r";
         }
 
         {
-          timeout = 600;
+          timeout = 900;
           on-timeout = status "pidof hyprlock || hyprlock";
         }
 
         {
-          timeout = 750;
+          timeout = 1200;
           on-timeout = status "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
         }
 
         {
-          timeout = 780;
+          timeout = 1230;
           on-timeout = status "systemctl suspend";
         }
       ];
