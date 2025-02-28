@@ -15,11 +15,10 @@
     settings = {
 
       exec-once = [
-        # "hyprlock"
         "hyprpaper"
         "hypridle"
         "waybar"
-        "hyprlock & (sleep 1 && grimblast copy output)"
+        "hyprlock"
       ];
 
       general = {
@@ -95,7 +94,8 @@
           let ws = i + 1;
           in [
             "$mod, code:1${toString i}, workspace, ${toString ws}"
-            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            "$mod SHIFT, code:1${toString i}, movetoworkspacesilent, ${toString ws}"
+            "$mod CTRL, code:1${toString i}, movetoworkspace, ${toString ws}"
           ]
         )
         10)
