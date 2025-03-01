@@ -10,7 +10,7 @@
 	};
 
 	home.shellAliases = {
-		"nix-rebuild" = "sudo nixos-rebuild switch --flake path:/home/max/Dotfiles";
+		"nix-rebuild" = "sudo nixos-rebuild switch --flake path:/home/max/Dotfiles#maxPC";
 	};
 
 	gtk = {
