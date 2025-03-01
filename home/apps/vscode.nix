@@ -8,6 +8,7 @@
 
       extensions = with pkgs.vscode-extensions; [
         bbenoist.nix
+        jnoortheen.nix-ide
         formulahendry.code-runner
         tomoki1207.pdf
         ms-vsliveshare.vsliveshare
