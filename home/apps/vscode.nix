@@ -7,7 +7,12 @@
       enableExtensionUpdateCheck = false;
 
       extensions = with pkgs.vscode-extensions; [
-        
+        bbenoist.nix
+        formulahendry.code-runner
+        tomoki1207.pdf
+        ms-vsliveshare.vsliveshare
+        pkief.material-icon-theme
+        mechatroner.rainbow-csv
       ];
       
       userSettings = {
