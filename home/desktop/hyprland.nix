@@ -24,8 +24,8 @@
       general = {
         border_size = 0;
         no_border_on_floating = true;
-        gaps_in = 2;
-        gaps_out = 5;
+        gaps_in = 0;
+        gaps_out = 0;
         resize_on_border = true;
         extend_border_grab_area = 15; # used when resize_on_border is set to true (15 by default)
         hover_icon_on_border = true; # used when resize_on_border is set to true (true by default)
@@ -33,7 +33,9 @@
       };
 
       decoration = {
-        rounding = 6;
+        rounding = 0;
+        dim_inactive = true;
+        dim_strength = 0.2;
       };
 
       input = {
