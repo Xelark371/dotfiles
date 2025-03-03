@@ -7,7 +7,7 @@
       position = "top";
       
       modules-left = [ "hyprland/workspaces" ];
-      modules-center = [ "custom/spotify" "clock" ];
+      modules-center = [ "clock" ];
       modules-right = [ "network" "backlight" "wireplumber" "battery" ];
       spacing = 15;
 
@@ -23,18 +23,6 @@
       "clock" = {
         format = "{:%H:%M}";
         tooltip-format = "{:%d-%m-%Y}";
-      };
-
-      "custom/spotify" = {
-        format = "{icon} {}";
-        format-icons = {
-          "Playing" = "▶️";
-          "Paused" = "⏸️";
-        };
-        max-length = 40;
-        exec = "playerctl -p spotify metadata --format '{{status}} {{artist}} - {{title}}' -F";
-        on-click = "playerctl -p spotify play-pause";
-        tooltip = false;
       };
 
       "backlight" = {
