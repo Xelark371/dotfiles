@@ -45,8 +45,6 @@
     enable32Bit = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -61,33 +59,10 @@
   };
 
   environment.systemPackages = with pkgs; [
-    hyprland
     pamixer
     brightnessctl
     xarchiver
-    nodejs_22
-    python3
-    xdg-desktop-portal-hyprland
-    polkit
-    gcc
-    jdk11
-    gimp
-    zlib
-    devenv
-
-    alacritty
-    firefox
-    neofetch
-    vscode
-    discord
-    spotify
     htop
-    brightnessctl
-    networkmanagerapplet
-    pcmanfm
-    libreoffice
-    prismlauncher
-    steam
   ];
 
   system.stateVersion = "24.05";

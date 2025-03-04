@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, nixVscodeExtensions, ... }:
 {
   programs.vscode = {
     enable = true;
@@ -6,7 +6,7 @@
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
 
-      extensions = with pkgs.vscode-extensions; [
+      extensions = with nixVscodeExtensions.vscode-marketplace; [
         bbenoist.nix
         jnoortheen.nix-ide
         formulahendry.code-runner
@@ -24,7 +24,5 @@
         "window.commandCenter" = false;
       };
     };
-
-    package = pkgs.vscode;
   };
 }

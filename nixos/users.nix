@@ -17,6 +17,4 @@
       };
     };
   };
-
-  programs.hyprland.enable = true;
 }

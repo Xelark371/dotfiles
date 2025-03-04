@@ -3,6 +3,7 @@
 	imports = [
 		./apps
 		./desktop
+		./software.nix
 	];
 
 	programs.bash = {
@@ -43,17 +44,6 @@
 			name = "phinger-cursors-dark";
 			size = 24;
 		};
-
-		packages = with pkgs; [
-			libsForQt5.qtstyleplugin-kvantum
-			qt5.qtbase
-			libsForQt5.qt5ct
-			vimix-gtk-themes
-
-			(python3.withPackages (ps: with ps; [
-				tkinter
-			]))
-		];
 
 		sessionVariables = {
 			XCURSOR_SIZE = "24";

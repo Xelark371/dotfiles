@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  security.rtkit.enable = true;
+  security = {
+    polkit.enable = true;
+    rtkit.enable = true;
+  };
 
   services = {
     logind.powerKey = "ignore";

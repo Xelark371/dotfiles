@@ -6,9 +6,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager }: let
+  outputs = { self, nixpkgs, home-manager, nix-vscode-extensions }: let
     system = "x86_64-linux";
   in {
     nixosConfigurations.maxPC = nixpkgs.lib.nixosSystem {
@@ -22,11 +27,11 @@
         {
           home-manager = {
             backupFileExtension = "backup";
-
-            useGlobalPkgs = true;
             useUserPackages = true;
-            
             users.max = import ./home;
+            extraSpecialArgs = {
+              nixVscodeExtensions = nix-vscode-extensions.extensions.${system};
+            };
           };
         }
       ];

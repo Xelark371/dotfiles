@@ -6,6 +6,10 @@
     ./hyprpaper.nix
   ];
 
+  home.packages = with pkgs; [
+    xdg-desktop-portal-hyprland
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
@@ -62,8 +66,7 @@
       "$filemanager" = "pcmanfm";
       "$menu" = "pidof wofi || wofi";
 
-      bind =
-      [
+      bind = [
         "$mod, E, exec, $filemanager"
         "$mod, Q, exec, $terminal"
         "$mod, D, exec, $menu"
