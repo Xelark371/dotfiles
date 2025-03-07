@@ -2,7 +2,7 @@
   imports = [
     ./alacritty.nix
     ./git.nix
-    ./librewolf.nix
+    ./firefox.nix
     ./vscode.nix
   ];
 
