@@ -8,6 +8,10 @@
     ];
   };
 
+  nix.settings.trusted-users = [
+    "max"
+  ];
+
   services.greetd = {
     enable = true;
     settings = {
