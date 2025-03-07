@@ -20,6 +20,7 @@
     pcmanfm
     prismlauncher
     python3
+    spotify
     steam
 
     libsForQt5.qtstyleplugin-kvantum
