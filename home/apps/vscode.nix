@@ -22,6 +22,12 @@
         };
         "code-runner.runInTerminal" = true;
         "window.commandCenter" = false;
+
+        "files.exclude" = {
+          "**/.mypy_cache" = true;
+          "**/__pycache__" = true;
+          "**/.devenv*" = true;
+        };
       };
     };
   };
