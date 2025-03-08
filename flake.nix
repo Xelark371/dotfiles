@@ -13,28 +13,30 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-vscode-extensions }: let
+  outputs = { self, nixpkgs, home-manager, nix-vscode-extensions } @inputs: let
     system = "x86_64-linux";
   in {
-    nixosConfigurations.maxPC = nixpkgs.lib.nixosSystem {
-      system = system;
-      modules = [
-        
-        home-manager.nixosModules.home-manager
+    nixosConfigurations = {
+      maxPC = nixpkgs.lib.nixosSystem {
+        system = system;
+        modules = [
+          
+          home-manager.nixosModules.home-manager
 
-        ./nixos
-        
-        {
-          home-manager = {
-            backupFileExtension = "backup";
-            useUserPackages = true;
-            users.max = import ./home;
-            extraSpecialArgs = {
-              nixVscodeExtensions = nix-vscode-extensions.extensions.${system};
+          ./nixos
+          
+          {
+            home-manager = {
+              backupFileExtension = "backup";
+              useUserPackages = true;
+              users.max = import ./home;
+              extraSpecialArgs = {
+                nixVscodeExtensions = nix-vscode-extensions.extensions.${system};
+              };
             };
-          };
-        }
-      ];
+          }
+        ];
+      };
     };
   };
 }
