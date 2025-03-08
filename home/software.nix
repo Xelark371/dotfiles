@@ -22,10 +22,6 @@
     python3
     spotify
     steam
-
-    libsForQt5.qtstyleplugin-kvantum
-    qt5.qtbase
-    libsForQt5.qt5ct
-    vimix-gtk-themes
+    ungit
   ];
 }
