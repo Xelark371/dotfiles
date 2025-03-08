@@ -17,6 +17,7 @@
     gcc
     gimp
     libreoffice
+    lutris
     neofetch
     networkmanagerapplet
     pcmanfm
