@@ -1,8 +1,8 @@
 { config, pkgs, ...}:
 {
 	imports = [
-		./apps
 		./desktop
+		./programs
 		./software.nix
 	];
 
