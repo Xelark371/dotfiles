@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   gtk = {
       enable = true;
@@ -8,16 +9,16 @@
       };
 
       iconTheme = {
-        package = pkgs.dracula-icon-theme;
-        name = "Dracula";
+        package = pkgs.papirus-icon-theme;
+        name = "Papirus-Dark";
       };
     };
 
     qt = {
       enable = true;
-      platformTheme.name = "q5ct";
+      platformTheme.name = "qt5ct";
       style = {
-        name = "Vimix-Dark-Doder";
+        name = "kvantum";
         package = pkgs.libsForQt5.qtstyleplugin-kvantum;
       };
     };
@@ -29,15 +30,21 @@
         name = "phinger-cursors-dark";
         size = 24;
       };
+
+      packages = with pkgs; [
+        libsForQt5.qtstyleplugin-kvantum
+      ];
     };
 
-    xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
-      [General]
-      theme=Vimix-Dark-Doder
-    '';
+    xdg.configFile = {
+      "Kvantum/kvantum.kvconfig".text = ''
+        [General]
+        theme=Vimix-Dark-Doder
+      '';
 
-    xdg.configFile."qt5ct/qt5ct.conf".text = ''
-      [Appearance]
-      style=kvantum
-    '';
+      "qt5ct/qt5ct.conf".text = ''
+        [Appearance]
+        style=kvantum
+      '';
+    };
 }
