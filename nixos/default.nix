@@ -1,11 +1,11 @@
 { config, lib, pkgs, ... }:
 {
   imports = [
-      ./graphical.nix
-      ./hardware-configuration.nix
-      ./services.nix
-      ./users.nix
-    ];
+    ./graphical.nix
+    ./hardware-configuration.nix
+    ./services.nix
+    ./users.nix
+  ];
 
   boot = {
     loader = {
@@ -16,6 +16,14 @@
         configurationLimit = 10;
       };
     };
+
+    extraModulePackages = [
+      config.boot.kernelPackages.v4l2loopback
+    ];
+
+    kernelModules = [
+      "v4l2loopback"
+    ];
   };
 
   zramSwap.enable = true;

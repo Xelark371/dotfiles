@@ -12,6 +12,8 @@
     dconf
     devenv
     discord
+    droidcam
+    easyeffects
     gcc
     gimp
     libreoffice
