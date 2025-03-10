@@ -40,6 +40,9 @@
         rounding = 0;
         dim_inactive = true;
         dim_strength = 0.2;
+        blur = {
+          enabled = false;
+        };
       };
 
       input = {
