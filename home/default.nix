@@ -8,7 +8,8 @@
 
 	home = {
 		shellAliases = {
-			"nix-rebuild" = "sudo nixos-rebuild switch --flake path:/home/max/Dotfiles#maxPC";
+			"nix-rebuild" = "sudo nixos-rebuild switch --flake path:/home/max/Dotfiles";
+			"home-rebuild" = "sudo home-manager switch --flake path:/home/max/Dotfiles";
 		};
 
 		sessionVariables = {
