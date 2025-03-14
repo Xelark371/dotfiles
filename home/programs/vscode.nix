@@ -1,4 +1,4 @@
-{ pkgs, nixVscodeExtensions, ... }:
+{ pkgs, lib, nixVscodeExtensions, ... }:
 {
   programs.vscode = {
     enable = true;
@@ -8,12 +8,12 @@
 
       extensions = with nixVscodeExtensions.vscode-marketplace; [
         bbenoist.nix
-        jnoortheen.nix-ide
         formulahendry.code-runner
-        tomoki1207.pdf
+        jnoortheen.nix-ide
+        mechatroner.rainbow-csv
         ms-vsliveshare.vsliveshare
         pkief.material-icon-theme
-        mechatroner.rainbow-csv
+        tomoki1207.pdf
       ];
       
       userSettings = {
