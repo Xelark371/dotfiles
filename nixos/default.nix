@@ -1,6 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 {
   imports = [
+    inputs.nix-index-database.nixosModules.nix-index
+
     ./graphical.nix
     ./hardware-configuration.nix
     ./services.nix
@@ -71,7 +73,12 @@
     brightnessctl
     xarchiver
     htop
+    home-manager
   ];
+
+  programs = {
+    nix-index-database.comma.enable = true;
+  };
 
   system.stateVersion = "24.05";
 }
