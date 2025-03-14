@@ -7,35 +7,43 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-vscode-extensions } @inputs: let
+  outputs = { 
+    nixpkgs,
+    home-manager,
+    nix-vscode-extensions,
+    ...
+  } @inputs:
+  let
     system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+    };
   in {
     nixosConfigurations = {
-      maxPC = nixpkgs.lib.nixosSystem {
-        system = system;
-        modules = [
-          
-          home-manager.nixosModules.home-manager
+      "maxPC" = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [ ./nixos ];
+      };
+    };
 
-          ./nixos
-          
-          {
-            home-manager = {
-              backupFileExtension = "backup";
-              useUserPackages = true;
-              users.max = import ./home;
-              extraSpecialArgs = {
-                nixVscodeExtensions = nix-vscode-extensions.extensions.${system};
-              };
-            };
-          }
-        ];
+    homeConfigurations = {
+      "max@maxPC" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {
+          nixVscodeExtensions = nix-vscode-extensions.extensions.${system};
+        };
+        modules = [ ./home ];
       };
     };
   };
