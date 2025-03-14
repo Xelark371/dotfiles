@@ -1,11 +1,13 @@
 {
-  users.users.max = {
-    isNormalUser = true;
-    home = "/home/max";
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-    ];
+  users.users = {
+    max = {
+      isNormalUser = true;
+      home = "/home/max";
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+      ];
+    };
   };
 
   nix.settings.trusted-users = [
