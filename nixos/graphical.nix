@@ -7,4 +7,6 @@
     noto-fonts-emoji
     nerd-fonts.ubuntu
   ];
+
+  programs.hyprland.enable = true;
 }
