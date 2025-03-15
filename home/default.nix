@@ -10,11 +10,6 @@
 		username = "max";
 		homeDirectory = "/home/max";
 
-		shellAliases = {
-			"nix-rebuild" = "sudo nixos-rebuild switch --flake path:/home/max/Dotfiles";
-			"home-rebuild" = "sudo home-manager switch --flake path:/home/max/Dotfiles";
-		};
-
 		sessionVariables = {
 			XCURSOR_SIZE = "24";
 			WLR_NO_HARDWARE_CURSORS = "1";

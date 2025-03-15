@@ -16,6 +16,7 @@
     easyeffects
     gcc
     gimp
+    gnumake
     libreoffice
     lutris
     neofetch
