@@ -40,9 +40,7 @@
     homeConfigurations = {
       "max@maxPC" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = {
-          nixVscodeExtensions = nix-vscode-extensions.extensions.${system};
-        };
+        extraSpecialArgs = { inherit inputs; };
         modules = [ ./home ];
       };
     };

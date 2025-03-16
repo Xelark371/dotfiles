@@ -1,4 +1,4 @@
-{ pkgs, lib, nixVscodeExtensions, ... }:
+{ pkgs, lib, inputs, ... }:
 {
   programs.vscode = {
     enable = true;
@@ -6,11 +6,12 @@
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
 
-      extensions = with nixVscodeExtensions.vscode-marketplace; [
+      extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [
         bbenoist.nix
         formulahendry.code-runner
         jnoortheen.nix-ide
         mechatroner.rainbow-csv
+        mkhl.direnv
         ms-vsliveshare.vsliveshare
         pkief.material-icon-theme
         tomoki1207.pdf
@@ -22,6 +23,7 @@
         };
         "code-runner.runInTerminal" = true;
         "window.commandCenter" = false;
+        "workbench.iconTheme" = "material-icon-theme";
 
         "files.exclude" = {
           "**/.mypy_cache" = true;
