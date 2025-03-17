@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nur.url = "github:nix-community/NUR";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -21,13 +22,14 @@
   outputs = { 
     nixpkgs,
     home-manager,
-    nix-vscode-extensions,
+    nur,
     ...
   } @inputs:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
+      overlays = [ nur.overlays.default ];
     };
   in {
     nixosConfigurations = {
