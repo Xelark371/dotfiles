@@ -28,7 +28,7 @@
       general = {
         border_size = 0;
         no_border_on_floating = true;
-        gaps_in = 1;
+        gaps_in = 0;
         gaps_out = 0;
         resize_on_border = true;
         extend_border_grab_area = 15; # used when resize_on_border is set to true (15 by default)
@@ -108,7 +108,7 @@
       ];
 
       monitor = [
-        "eDP-1, highres, auto, 1.33"
+        "eDP-1, highres, auto, 1.25"
         ", highrr, auto, auto"
       ];
     };
