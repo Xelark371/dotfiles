@@ -109,7 +109,7 @@
 
       monitor = [
         "eDP-1, highres, auto, 1.33"
-        ", highrr, auto-up, 1"
+        ", highrr, auto, auto"
       ];
     };
   };
