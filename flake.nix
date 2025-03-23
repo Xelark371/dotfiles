@@ -19,7 +19,7 @@
     };
   };
 
-  outputs = { 
+  outputs = {
     nixpkgs,
     home-manager,
     nur,

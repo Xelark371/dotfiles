@@ -17,7 +17,7 @@
 
       main_menu() {
         choice=$(echo -e "Available Networks\nConnect to Network" | wofi -d -p "Network Options")
-        
+
         case "$choice" in
           "Available Networks")
             selected_network=$(show_networks)

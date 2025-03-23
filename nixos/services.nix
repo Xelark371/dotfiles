@@ -18,7 +18,7 @@
 
     printing = {
       enable = true;
-      drivers = with pkgs; [ 
+      drivers = with pkgs; [
         gutenprint
         epson-escpr
       ];
