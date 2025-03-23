@@ -14,9 +14,10 @@
         mkhl.direnv
         ms-vsliveshare.vsliveshare
         pkief.material-icon-theme
+        shardulm94.trailing-spaces
         tomoki1207.pdf
       ];
-      
+
       userSettings = {
         "code-runner.executorMap" = {
           "java" = "cd $dir && javac -d ../bin $fileName && java -cp ../bin $fileNameWithoutExt";
