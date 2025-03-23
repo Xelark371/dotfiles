@@ -63,7 +63,7 @@
       };
 
       xwayland.force_zero_scaling = true;
-      
+
       "$mod" = "SUPER";
       "$terminal" = "alacritty";
       "$filemanager" = "pcmanfm";
@@ -79,7 +79,7 @@
 
         "$mod, Print, exec, grimblast copy output"
         "SHIFT, Print, exec, grimblast copy area"
-        
+
         ", XF86AudioRaiseVolume, exec, pamixer -i 5"
         ", XF86AudioLowerVolume, exec, pamixer -d 5"
         ", XF86AudioMute, exec, pamixer -t"

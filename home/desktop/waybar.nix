@@ -5,7 +5,7 @@
     settings = [{
       layer = "top";
       position = "top";
-      
+
       modules-left = [ "hyprland/workspaces" ];
       modules-center = [ "clock" ];
       modules-right = [ "network" "backlight" "wireplumber" "battery" ];
