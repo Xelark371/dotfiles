@@ -9,7 +9,7 @@
         isDefault = true;
 
         search = {
-          default = "Google";
+          default = "google";
         };
 
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
