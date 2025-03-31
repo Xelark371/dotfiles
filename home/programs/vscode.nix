@@ -30,6 +30,8 @@
           "**/.mypy_cache" = true;
           "**/__pycache__" = true;
           "**/.devenv*" = true;
+
+        "direnv.restart.automatic" = true;
         };
       };
     };
