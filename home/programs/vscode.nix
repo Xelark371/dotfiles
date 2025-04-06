@@ -26,6 +26,8 @@
         "window.commandCenter" = false;
         "workbench.iconTheme" = "material-icon-theme";
 
+        "files.insertFinalNewline" = true;
+        "files.trimFinalNewlines" = true;
         "files.exclude" = {
           "**/.mypy_cache" = true;
           "**/__pycache__" = true;
