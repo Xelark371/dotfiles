@@ -29,6 +29,7 @@
           "**/.mypy_cache" = true;
           "**/__pycache__" = true;
           "**/.devenv*" = true;
+          "**/.direnv" = true;
 
         "direnv.restart.automatic" = true;
         };
