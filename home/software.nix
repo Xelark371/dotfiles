@@ -17,6 +17,7 @@
     gcc
     gimp
     gnumake
+    godot
     libreoffice
     lutris
     neofetch
