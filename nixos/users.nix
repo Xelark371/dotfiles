@@ -12,14 +12,4 @@
   nix.settings.trusted-users = [
     "max"
   ];
-
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "Hyprland";
-        user = "max";
-      };
-    };
-  };
 }

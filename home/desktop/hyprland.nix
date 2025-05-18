@@ -22,7 +22,6 @@
         "hyprpaper"
         "hypridle"
         "waybar"
-        "hyprlock"
       ];
 
       general = {

@@ -3,6 +3,7 @@
   imports = [
     inputs.nix-index-database.nixosModules.nix-index
 
+    ./display-manager.nix
     ./graphical.nix
     ./hardware-configuration.nix
     ./services.nix
