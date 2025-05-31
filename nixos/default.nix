@@ -3,34 +3,13 @@
   imports = [
     inputs.nix-index-database.nixosModules.nix-index
 
+    ./bootloader.nix
     ./display-manager.nix
     ./graphical.nix
     ./hardware-configuration.nix
     ./services.nix
     ./users.nix
   ];
-
-  boot = {
-    loader = {
-      efi.canTouchEfiVariables = true;
-
-      grub = {
-        enable = true;
-        efiSupport = true;
-        useOSProber = true;
-        devices = [ "nodev" ];
-        configurationLimit = 10;
-      };
-    };
-
-    extraModulePackages = [
-      config.boot.kernelPackages.v4l2loopback
-    ];
-
-    kernelModules = [
-      "v4l2loopback"
-    ];
-  };
 
   zramSwap.enable = true;
 
