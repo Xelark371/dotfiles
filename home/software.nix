@@ -13,7 +13,6 @@
     devenv
     discord
     droidcam
-    easyeffects
     gcc
     gimp
     gnumake
