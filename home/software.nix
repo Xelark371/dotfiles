@@ -26,6 +26,7 @@
     python3
     spotify
     steam
+    tor-browser
     ungit
   ];
 }
