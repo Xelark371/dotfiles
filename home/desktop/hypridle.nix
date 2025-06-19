@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   status = command : ''
-    [ $(${pkgs.playerctl}/bin/playerctl status 2>/dev/null) = "Playing" ] && : || ${command}
+    ${pkgs.playerctl}/bin/playerctl -a status | grep -q "Playing" && : || ${command}
   '';
 in
 {
@@ -21,7 +21,7 @@ in
       listener = [
         {
           timeout = 600;
-          on-timeout = status "brightnessctl -s set 10";
+          on-timeout = status "brightnessctl -s set 0%";
           on-resume = "brightnessctl -r";
         }
 
