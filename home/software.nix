@@ -24,6 +24,7 @@
     pcmanfm
     prismlauncher
     python3
+    remmina
     spotify
     steam
     tor-browser
