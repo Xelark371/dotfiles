@@ -66,6 +66,7 @@
       "$mod" = "SUPER";
       "$terminal" = "alacritty";
       "$filemanager" = "pcmanfm";
+      "$musicplayer" = "spotify";
       "$menu" = "pidof wofi || wofi";
 
       bind = [
@@ -79,13 +80,13 @@
         "$mod, Print, exec, grimblast copy output"
         "SHIFT, Print, exec, grimblast copy area"
 
-        ", XF86AudioRaiseVolume, exec, pamixer -i 5"
-        ", XF86AudioLowerVolume, exec, pamixer -d 5"
         ", XF86AudioMute, exec, pamixer -t"
         ", XF86AudioMicMute, exec, pamixer --default-source -t"
 
-        ", XF86MonBrightnessUp, exec, brightnessctl set +5%"
-        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+        ", XF86AudioStop, exec, playerctl -p $musicplayer stop"
+        ", XF86AudioPrev, exec, playerctl -p $musicplayer previous"
+        ", XF86AudioPlay, exec, playerctl -p $musicplayer play-pause"
+        ", XF86AudioNext, exec, playerctl -p $musicplayer next"
 
         ", XF86PowerOff, exec, pidof wofi || ${config.home.homeDirectory}/.local/bin/powermenu.sh"
       ]
@@ -101,6 +102,16 @@
         10)
       );
 
+      binde = [
+        ", XF86AudioRaiseVolume, exec, pamixer -i 1"
+        ", XF86AudioLowerVolume, exec, pamixer -d 1"
+      ];
+
+      bindel = [
+        ", XF86MonBrightnessUp, exec, brightnessctl set +1%"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 1%-"
+      ];
+
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
@@ -110,6 +121,11 @@
         "eDP-1, highres, auto, 1.25"
         ", highrr, auto, auto"
       ];
+
+      ecosystem = {
+        no_update_news = true;
+        no_donation_nag = true;
+      };
     };
   };
 }
