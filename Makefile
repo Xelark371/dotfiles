@@ -6,6 +6,6 @@ system:
 	sudo nixos-rebuild switch --flake ${flake}
 
 home:
-	home-manager switch -b backup --flake ${flake}
+	home-manager switch --flake ${flake}
 
 all: system home
