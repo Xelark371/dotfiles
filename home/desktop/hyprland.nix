@@ -71,7 +71,7 @@
 
       bind = [
         "$mod, E, exec, $filemanager"
-        "$mod, Q, exec, $terminal"
+        "$mod, Return, exec, $terminal"
         "$mod, D, exec, $menu"
         "$mod, C, killactive,"
         "$mod, L, exec, hyprlock"
