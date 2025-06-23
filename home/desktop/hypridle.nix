@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   status = command : ''
-    ${pkgs.playerctl}/bin/playerctl -a status | grep -q "Playing" && : || ${command}
+    ${pkgs.playerctl}/bin/playerctl -a status | grep -q "Playing" || ${command}
   '';
 in
 {
