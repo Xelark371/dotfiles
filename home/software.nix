@@ -29,5 +29,6 @@
     steam
     tor-browser
     ungit
+    wl-clipboard
   ];
 }
