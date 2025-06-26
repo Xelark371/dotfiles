@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    phinger-cursors
+  ];
+
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
