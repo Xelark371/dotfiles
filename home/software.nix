@@ -21,6 +21,7 @@
     lutris
     neofetch
     networkmanagerapplet
+    obs-studio
     pcmanfm
     prismlauncher
     python3
