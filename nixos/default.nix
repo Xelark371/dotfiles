@@ -14,8 +14,6 @@
 
   zramSwap.enable = true;
 
-  hardware.cpu.amd.updateMicrocode = true;
-
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "fr_FR.UTF-8";
 
@@ -57,7 +55,6 @@
     brightnessctl
     home-manager
     htop
-    pamixer
     xarchiver
   ];
 

@@ -80,8 +80,8 @@
         "$mod, Print, exec, grimblast copy output"
         "SHIFT, Print, exec, grimblast copy area"
 
-        ", XF86AudioMute, exec, pamixer -t"
-        ", XF86AudioMicMute, exec, pamixer --default-source -t"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
         ", XF86AudioStop, exec, playerctl -p $musicplayer stop"
         ", XF86AudioPrev, exec, playerctl -p $musicplayer previous"
@@ -103,8 +103,8 @@
       );
 
       binde = [
-        ", XF86AudioRaiseVolume, exec, pamixer -i 1"
-        ", XF86AudioLowerVolume, exec, pamixer -d 1"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"
       ];
 
       bindel = [
