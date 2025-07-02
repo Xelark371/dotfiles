@@ -5,6 +5,7 @@
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;
+      timeout = null;
 
       grub = {
         enable = true;
