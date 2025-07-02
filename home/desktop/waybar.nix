@@ -3,6 +3,7 @@
   programs.waybar = {
     enable = true;
     settings = [{
+      height = 30;
       layer = "top";
       position = "top";
 
@@ -63,7 +64,12 @@
     }];
 
     style = ''
-      .modules-right {
+      window.eDP-1 * {
+        all: unset;
+        font-size: 12px;
+      }
+
+      window .modules-right {
         margin-right: 10px;
       }
 
