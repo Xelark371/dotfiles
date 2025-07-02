@@ -64,17 +64,24 @@
     }];
 
     style = ''
-      window.eDP-1 * {
+      * {
         all: unset;
+      }
+
+      #waybar {
+        background-color: #1d1d1d;
+      }
+
+      window.eDP-1 * {
         font-size: 12px;
       }
 
-      window .modules-right {
+      .modules-right {
         margin-right: 10px;
       }
 
-      #workspace button {
-        border-radius: 50px;
+      #workspaces button {
+        border-radius: 5px;
         padding: 0 5px;
       }
 
