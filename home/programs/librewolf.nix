@@ -11,15 +11,20 @@
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           bitwarden
           darkreader
+          istilldontcareaboutcookies
           ublock-origin
         ];
 
         settings = {
-          "extensions.autoDisableScopes" = 0;
-
           "browser.translations.automaticallyPopup" = false;
 
+          "extensions.autoDisableScopes" = 0;
+
+          "privacy.resistFingerprinting" = false;
+
           "ui.key.menuAccessKeyFocuses" = false;
+
+          "webgl.disabled" = false;
         };
       };
     };
