@@ -68,7 +68,7 @@
       }
 
       #waybar {
-        background-color: #1d1d1d;
+        background-color:rgb(45, 45, 45);
       }
 
       window.eDP-1 * {
