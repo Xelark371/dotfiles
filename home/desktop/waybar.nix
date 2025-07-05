@@ -15,7 +15,6 @@
       "hyprland/workspaces" = {
         format = "{}";
         on-click = "activate";
-        sort-by-number = true;
         persistent-workspaces = {
           "*" = 10;
         };
