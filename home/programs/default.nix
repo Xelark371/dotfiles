@@ -10,14 +10,12 @@
     enableBashIntegration = true;
   };
 
-  programs.bash = {
-		enable = true;
-	};
+  programs.bash.enable = true;
 
   programs.git = {
     enable = true;
     userName = "Xelark371";
-    userEmail = "maxencebressel.371@gmail.com";
+    userEmail = "maxencebressel.371@proton.me";
 
     ignores = [
       ".devenv*"
