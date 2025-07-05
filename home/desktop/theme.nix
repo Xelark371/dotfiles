@@ -5,7 +5,7 @@
 
     theme = {
       package = pkgs.vimix-gtk-themes;
-      name = "vimix-dark-doder";
+      name = "Vimix-dark-doder";
     };
 
     iconTheme = {
