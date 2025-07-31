@@ -13,8 +13,6 @@
         useOSProber = true;
         devices = [ "nodev" ];
         configurationLimit = 10;
-
-        theme = "${pkgs.catppuccin-grub}/grub/themes/catppuccin-mocha-grub-theme";
       };
     };
 
