@@ -30,6 +30,7 @@
     steam
     tor-browser
     ungit
+    virt-manager
     wl-clipboard
   ];
 }

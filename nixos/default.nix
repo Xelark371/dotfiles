@@ -17,6 +17,16 @@
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "fr_FR.UTF-8";
 
+  virtualisation.libvirtd = {
+    enable = true;
+
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      ovmf.enable = true;
+    };
+  };
+
   networking = {
     hostName = "maxPC";
     networkmanager = {
