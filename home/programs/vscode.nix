@@ -6,7 +6,7 @@
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
 
-      extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [
+      extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
         bbenoist.nix
         formulahendry.code-runner
         jnoortheen.nix-ide
