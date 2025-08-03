@@ -1,13 +1,12 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, ... }:
 {
   imports = [
-    inputs.nix-index-database.nixosModules.nix-index
-
     ./audio.nix
     ./bootloader.nix
     ./display-manager.nix
     ./graphical.nix
     ./hardware-configuration.nix
+    ./nix.nix
     ./services.nix
     ./users.nix
   ];
@@ -48,30 +47,12 @@
     enable32Bit = true;
   };
 
-  nix = {
-    optimise.automatic = true;
-
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 2w";
-    };
-  };
-
   environment.systemPackages = with pkgs; [
     brightnessctl
     home-manager
     htop
     xarchiver
   ];
-
-  programs = {
-    nix-index-database.comma.enable = true;
-  };
 
   system.stateVersion = "24.05";
 }
