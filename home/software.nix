@@ -26,10 +26,12 @@
     prismlauncher
     python3
     remmina
+    simple-scan
     spotify
     steam
     tor-browser
     ungit
+    viewnior
     virt-manager
     wl-clipboard
   ];
