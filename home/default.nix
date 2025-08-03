@@ -19,4 +19,18 @@
 
 		stateVersion = "24.05";
 	};
+
+	xdg = {
+    mimeApps = {
+      enable = true;
+
+      defaultApplications = {
+        "application/pdf" = [ "librewolf.desktop" ];
+        "application/zip" = [ "xarchiver.desktop" ];
+        "image/jpeg" = [ "viewnior.desktop" ];
+        "image/png" = [ "viewnior.desktop" ];
+        "text/plain" = [ "libreoffice.desktop" ];
+      };
+    };
+	};
 }
