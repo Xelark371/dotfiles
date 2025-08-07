@@ -16,6 +16,7 @@
 
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "fr_FR.UTF-8";
+  console.keyMap = "fr";
 
   virtualisation.libvirtd = {
     enable = true;
@@ -36,16 +37,16 @@
     };
   };
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
 
-  console.keyMap = "fr";
-
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
