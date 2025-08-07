@@ -11,8 +11,6 @@
     gvfs.enable = true;
     udisks2.enable = true;
 
-    logind.powerKey = "ignore";
-
     tlp = {
       enable = true;
 
@@ -25,20 +23,6 @@
       };
     };
 
-    printing = {
-      enable = true;
-      browsing = true;
-      defaultShared = true;
-    };
-
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      openFirewall = true;
-    };
-  };
-
-  hardware.sane = {
-    enable = true;
+    logind.powerKey = "ignore";
   };
 }

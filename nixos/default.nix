@@ -7,6 +7,7 @@
     ./graphical.nix
     ./hardware-configuration.nix
     ./nix.nix
+    ./printers.nix
     ./services.nix
     ./users.nix
   ];
