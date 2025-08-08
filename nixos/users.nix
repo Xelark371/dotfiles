@@ -3,9 +3,9 @@
     max = {
       isNormalUser = true;
       extraGroups = [
-        "wheel"
-        "networkmanager"
         "libvirtd"
+        "networkmanager"
+        "wheel"
       ];
     };
   };
