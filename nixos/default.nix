@@ -3,6 +3,7 @@
   imports = [
     ./audio.nix
     ./bootloader.nix
+    ./disk.nix
     ./display-manager.nix
     ./graphical.nix
     ./hardware-configuration.nix
