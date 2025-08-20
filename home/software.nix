@@ -19,6 +19,7 @@
     godot
     libreoffice
     lutris
+    mindustry
     neofetch
     networkmanagerapplet
     obs-studio
