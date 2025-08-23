@@ -9,6 +9,7 @@
   ];
 
   home.packages = with pkgs; [
+    blueman
     dconf
     devenv
     discord
