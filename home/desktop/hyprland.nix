@@ -4,6 +4,7 @@
     ./hypridle.nix
     ./hyprlock.nix
     ./hyprpaper.nix
+    ./hyprsunset.nix
   ];
 
   home.packages = with pkgs; [
