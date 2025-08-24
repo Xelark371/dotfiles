@@ -1,6 +1,9 @@
-.PHONY: system home all
+.PHONY: news system home all
 
 flake = "path:$(shell pwd)"
+
+news:
+	home-manager news --flake ${flake}
 
 system:
 	sudo nixos-rebuild switch --flake ${flake}
