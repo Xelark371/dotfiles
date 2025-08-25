@@ -11,6 +11,7 @@
     ./printers.nix
     ./services.nix
     ./users.nix
+    ./uwsm.nix
   ];
 
   zramSwap.enable = true;
