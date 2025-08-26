@@ -65,7 +65,7 @@
       "$mod" = "SUPER";
       "$terminal" = "uwsm app -- alacritty || alacritty";
       "$filemanager" = "uwsm app -- pcmanfm || pcmanfm";
-      "$musicplayer" = "uwsm app -- spotify || spotify";
+      "$musicplayer" = "spotify";
       "$menu" = "pidof wofi || wofi";
 
       bind = [
