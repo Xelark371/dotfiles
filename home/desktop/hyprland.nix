@@ -65,8 +65,8 @@
       xwayland.force_zero_scaling = true;
 
       "$mod" = "SUPER";
-      "$terminal" = "alacritty";
-      "$filemanager" = "pcmanfm";
+      "$terminal" = "uwsm app -- alacritty || alacritty";
+      "$filemanager" = "uwsm app -- pcmanfm || pcmanfm";
       "$musicplayer" = "spotify";
       "$menu" = "pidof wofi || wofi";
 
