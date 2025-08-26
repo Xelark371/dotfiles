@@ -14,15 +14,13 @@
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
-    systemd.enable = true;
+    systemd.enable = false;
     xwayland.enable = true;
 
     settings = {
 
       exec-once = [
-        "hyprpaper"
-        "hypridle"
-        "waybar"
+        "uwsm app -- waybar || waybar"
       ];
 
       general = {
@@ -67,7 +65,7 @@
       "$mod" = "SUPER";
       "$terminal" = "uwsm app -- alacritty || alacritty";
       "$filemanager" = "uwsm app -- pcmanfm || pcmanfm";
-      "$musicplayer" = "spotify";
+      "$musicplayer" = "uwsm app -- spotify || spotify";
       "$menu" = "pidof wofi || wofi";
 
       bind = [
