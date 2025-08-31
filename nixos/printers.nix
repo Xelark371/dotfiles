@@ -3,13 +3,19 @@
     printing = {
       enable = true;
       browsing = true;
-      defaultShared = true;
+
+      browsedConf = ''
+        BrowseDNSSDSubTypes _cups,_print
+        BrowseLocalProtocols all
+        BrowseRemoteProtocols all
+        CreateIPPPrinterQueues All
+        BrowseProtocols all
+      '';
     };
 
     avahi = {
       enable = true;
       nssmdns4 = true;
-      openFirewall = true;
     };
   };
 
