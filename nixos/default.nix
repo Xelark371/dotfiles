@@ -16,7 +16,7 @@
 
   zramSwap.enable = true;
 
-  time.timeZone = "Europe/Paris";
+  services.automatic-timezoned.enable = true;
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "fr";
 
