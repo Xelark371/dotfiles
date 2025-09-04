@@ -4,10 +4,11 @@
     ./hypridle.nix
     ./hyprlock.nix
     ./hyprpaper.nix
-    ./hyprsunset.nix
   ];
 
   home.packages = with pkgs; [
+    hyprsunset
+    sunsetr
     xdg-desktop-portal-hyprland
   ];
 
@@ -20,7 +21,8 @@
     settings = {
 
       exec-once = [
-        "uwsm app -- waybar || waybar"
+        "uwsm app -- waybar"
+        "uwsm app -- sunsetr"
       ];
 
       general = {
