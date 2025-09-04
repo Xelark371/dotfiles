@@ -15,14 +15,17 @@
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
-    systemd.enable = false;
+    systemd = {
+      enable = true;
+      variables = [ "--all" ];
+    };
     xwayland.enable = true;
 
     settings = {
 
       exec-once = [
-        "uwsm app -- waybar"
-        "uwsm app -- sunsetr"
+        "waybar"
+        "sunsetr"
       ];
 
       general = {
@@ -65,15 +68,15 @@
       xwayland.force_zero_scaling = true;
 
       "$mod" = "SUPER";
-      "$terminal" = "uwsm app -- alacritty || alacritty";
-      "$filemanager" = "uwsm app -- pcmanfm || pcmanfm";
+      "$terminal" = "alacritty";
+      "$filemanager" = "pcmanfm";
       "$musicplayer" = "spotify";
-      "$menu" = "pidof wofi || wofi";
+      "$menu" = "wofi";
 
       bind = [
         "$mod, E, exec, $filemanager"
         "$mod, Return, exec, $terminal"
-        "$mod, D, exec, $menu"
+        "$mod, D, exec, pidof $menu | $menu"
         "$mod, C, killactive,"
         "$mod, L, exec, hyprlock"
         "$mod, V, togglefloating,"
