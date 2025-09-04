@@ -39,6 +39,7 @@ in
         {
           timeout = 1230;
           on-timeout = status "systemctl suspend";
+          on-resume = "sunsetr -r";
         }
       ];
     };
