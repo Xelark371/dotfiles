@@ -33,7 +33,7 @@ in
         {
           timeout = 1200;
           on-timeout = status "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on";
+          on-resume = "hyprctl dispatch dpms on; sunsetr -r";
         }
 
         {
