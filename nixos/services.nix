@@ -23,6 +23,6 @@
       };
     };
 
-    logind.powerKey = "ignore";
+    logind.settings.Login.HandlePowerKey = "ignore";
   };
 }
