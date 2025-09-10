@@ -5,10 +5,6 @@ let
   '';
 in
 {
-  home.packages = with pkgs; [
-    playerctl
-  ];
-
   services.hypridle = {
     enable = true;
     settings = {

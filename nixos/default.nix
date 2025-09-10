@@ -39,9 +39,7 @@
   };
 
   hardware = {
-    bluetooth = {
-      enable = true;
-    };
+    bluetooth.enable = true;
 
     graphics = {
       enable = true;
@@ -50,7 +48,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    brightnessctl
     home-manager
     htop
     xarchiver

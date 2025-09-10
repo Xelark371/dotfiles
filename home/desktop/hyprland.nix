@@ -8,8 +8,6 @@
 
   home.packages = with pkgs; [
     hyprsunset
-    sunsetr
-    xdg-desktop-portal-hyprland
   ];
 
   wayland.windowManager.hyprland = {
@@ -24,8 +22,8 @@
     settings = {
 
       exec-once = [
-        "waybar"
-        "sunsetr"
+        "${pkgs.waybar}/bin/waybar"
+        "${pkgs.sunsetr}/bin/sunsetr"
       ];
 
       general = {
@@ -81,16 +79,16 @@
         "$mod, L, exec, hyprlock"
         "$mod, V, togglefloating,"
 
-        "$mod, Print, exec, grimblast copy output"
-        "SHIFT, Print, exec, grimblast copy area"
+        "$mod, Print, exec, ${pkgs.grimblast}/bin/grimblast copy output"
+        "SHIFT, Print, exec, ${pkgs.grimblast}/bin/grimblast copy area"
 
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
-        ", XF86AudioStop, exec, playerctl -p $musicplayer stop"
-        ", XF86AudioPrev, exec, playerctl -p $musicplayer previous"
-        ", XF86AudioPlay, exec, playerctl -p $musicplayer play-pause"
-        ", XF86AudioNext, exec, playerctl -p $musicplayer next"
+        ", XF86AudioStop, exec, ${pkgs.playerctl}/bin/playerctl -p $musicplayer stop"
+        ", XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl -p $musicplayer previous"
+        ", XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl -p $musicplayer play-pause"
+        ", XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl -p $musicplayer next"
 
         ", XF86PowerOff, exec, pidof wofi || ${config.home.homeDirectory}/.local/bin/powermenu.sh"
       ]
@@ -112,8 +110,8 @@
       ];
 
       bindel = [
-        ", XF86MonBrightnessUp, exec, brightnessctl set +1%"
-        ", XF86MonBrightnessDown, exec, brightnessctl set 1%-"
+        ", XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set +1%"
+        ", XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%-"
       ];
 
       bindm = [
