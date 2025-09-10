@@ -57,7 +57,6 @@
         format-wifi = "{essid} {icon}";
         format-ethernet = "{essid} 󰈀";
         format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
-        on-click = "${config.home.homeDirectory}/.local/bin/network-menu.sh";
         tooltip = false;
       };
     }];
