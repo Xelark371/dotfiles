@@ -6,10 +6,6 @@
     ./hyprpaper.nix
   ];
 
-  home.packages = with pkgs; [
-    hyprsunset
-  ];
-
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
@@ -20,12 +16,6 @@
     xwayland.enable = true;
 
     settings = {
-
-      exec-once = [
-        "${pkgs.waybar}/bin/waybar"
-        "${pkgs.sunsetr}/bin/sunsetr"
-      ];
-
       general = {
         border_size = 0;
         no_border_on_floating = true;

@@ -7,4 +7,6 @@
     ./waybar.nix
     ./wofi.nix
   ];
+
+  services.hyprsunset.enable = true;
 }
