@@ -4,14 +4,15 @@
     enable = true;
     systemd.enable = true;
     settings = [{
-      height = 30;
-      layer = "top";
+      height = 24;
+      margin = "4px 4px 0px 4px";
+      layer = "bottom";
       position = "top";
 
       modules-left = [ "hyprland/workspaces" ];
       modules-center = [ "clock" ];
       modules-right = [ "network" "backlight" "wireplumber" "battery" ];
-      spacing = 15;
+      spacing = 10;
 
       "hyprland/workspaces" = {
         format = "{}";
@@ -67,16 +68,14 @@
         all: unset;
       }
 
-      #waybar {
+      .module {
         background-color:rgb(45, 45, 45);
+        border-radius: 10px;
+        padding: 0 10px;
       }
 
       window.eDP-1 * {
         font-size: 14px;
-      }
-
-      .modules-right {
-        margin-right: 10px;
       }
 
       #workspaces button {
