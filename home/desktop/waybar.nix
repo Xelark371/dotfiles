@@ -4,7 +4,7 @@
     enable = true;
     systemd.enable = true;
     settings = [{
-      height = 24;
+      height = 24; #28 desktop
       margin = "4px 4px 0px 4px";
       layer = "bottom";
       position = "top";

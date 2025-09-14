@@ -17,11 +17,10 @@
 
     settings = {
       general = {
-        border_size = 1;
+        border_size = 0;
         no_border_on_floating = true;
         gaps_in = 2;
         gaps_out = 5;
-        "col.active_border" = "0x99ebebeb";
         resize_on_border = true;
         extend_border_grab_area = 15; # used when resize_on_border is set to true (15 by default)
         hover_icon_on_border = true; # used when resize_on_border is set to true (true by default)
@@ -29,7 +28,7 @@
       };
 
       decoration = {
-        rounding = 4;
+        rounding = 10;
         dim_inactive = true;
         dim_strength = 0.2;
         blur = {
