@@ -11,6 +11,7 @@
     ./printers.nix
     ./services.nix
     ./users.nix
+    ./vpn.nix
   ];
 
   zramSwap.enable = true;

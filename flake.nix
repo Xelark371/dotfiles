@@ -36,10 +36,12 @@
       inherit system;
       overlays = [ nur.overlays.default ];
     };
+
+    secrets = import ./secrets.nix;
   in {
     nixosConfigurations = {
       "maxPC" = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs secrets; };
         modules = [ ./nixos ];
       };
     };
