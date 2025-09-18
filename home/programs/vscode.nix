@@ -9,6 +9,7 @@
       extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
         bbenoist.nix
         formulahendry.code-runner
+        icrawl.discord-vscode
         jnoortheen.nix-ide
         mechatroner.rainbow-csv
         mkhl.direnv
@@ -20,6 +21,11 @@
 
       userSettings = {
         "code-runner.runInTerminal" = true;
+
+        "direnv.restart.automatic" = true;
+        "discord.lowerDetailsDebugging" = "Debugging line {current_line}";
+        "discord.lowerDetailsEditing" = "Editing line {current_line}";
+
         "window.commandCenter" = false;
         "workbench.iconTheme" = "material-icon-theme";
 
@@ -30,8 +36,6 @@
           "**/__pycache__" = true;
           "**/.devenv*" = true;
           "**/.direnv" = true;
-
-        "direnv.restart.automatic" = true;
         };
       };
     };
