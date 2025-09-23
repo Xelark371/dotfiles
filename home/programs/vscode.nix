@@ -11,6 +11,7 @@
         formulahendry.code-runner
         icrawl.discord-vscode
         jnoortheen.nix-ide
+        leonardssh.vscord
         mechatroner.rainbow-csv
         mkhl.direnv
         ms-vsliveshare.vsliveshare
@@ -23,11 +24,6 @@
         "code-runner.runInTerminal" = true;
 
         "direnv.restart.automatic" = true;
-        "discord.lowerDetailsDebugging" = "Debugging line {current_line}";
-        "discord.lowerDetailsEditing" = "Editing line {current_line}";
-
-        "window.commandCenter" = false;
-        "workbench.iconTheme" = "material-icon-theme";
 
         "files.insertFinalNewline" = true;
         "files.trimFinalNewlines" = true;
@@ -37,6 +33,12 @@
           "**/.devenv*" = true;
           "**/.direnv" = true;
         };
+
+        "vscord.app.name" = "Visual Studio Code";
+
+        "window.commandCenter" = false;
+
+        "workbench.iconTheme" = "material-icon-theme";
       };
     };
   };
