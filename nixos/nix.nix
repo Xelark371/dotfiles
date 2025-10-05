@@ -9,6 +9,7 @@
 
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
+      download-buffer-size = 104857600;
     };
 
     gc = {
