@@ -7,10 +7,7 @@
   nix = {
     optimise.automatic = true;
 
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      download-buffer-size = 104857600;
-    };
+    settings.experimental-features = [ "nix-command" "flakes" ];
 
     gc = {
       automatic = true;
@@ -19,7 +16,5 @@
     };
   };
 
-  programs = {
-    nix-index-database.comma.enable = true;
-  };
+  programs.nix-index-database.comma.enable = true;
 }
