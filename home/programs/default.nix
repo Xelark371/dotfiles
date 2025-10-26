@@ -14,18 +14,21 @@
 
   programs.git = {
     enable = true;
-    userName = "Xelark371";
-    userEmail = "maxencebressel.371@proton.me";
+
+    settings = {
+      user = {
+        name = "Xelark371";
+        email = "maxencebressel.371@proton.me";
+      };
+
+      credential = {
+        helper = "store";
+      };
+    };
 
     ignores = [
       ".devenv*"
       "__pycache__"
     ];
-
-    extraConfig = {
-      credential = {
-        helper = "store";
-      };
-    };
   };
 }
