@@ -68,6 +68,12 @@
         all: unset;
       }
 
+      tooltip {
+        background-color:rgb(45, 45, 45);
+        font-size: 14px;
+        border-radius: 10px;
+      }
+
       .module {
         background-color:rgb(45, 45, 45);
         border-radius: 10px;
