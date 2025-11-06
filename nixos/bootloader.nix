@@ -16,6 +16,10 @@
       };
     };
 
+    extraModprobeConfig = ''
+      options ideapad_laptop no_bt_rfkill=1
+    '';
+
     extraModulePackages = [
       config.boot.kernelPackages.v4l2loopback
     ];
