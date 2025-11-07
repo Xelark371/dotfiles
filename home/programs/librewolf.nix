@@ -22,10 +22,18 @@
 
           "privacy.resistFingerprinting" = false;
 
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
           "ui.key.menuAccessKeyFocuses" = false;
 
           "webgl.disabled" = false;
         };
+
+        userChrome = ''
+          .titlebar-buttonbox-container, .titlebar-spacer[type="post-tabs"] {
+            display: none;
+          }
+        '';
       };
     };
   };
