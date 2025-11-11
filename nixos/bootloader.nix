@@ -3,6 +3,7 @@
   environment.systemPackages = [ pkgs.catppuccin-grub ];
 
   boot = {
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
     loader = {
       efi.canTouchEfiVariables = true;
       timeout = null;
