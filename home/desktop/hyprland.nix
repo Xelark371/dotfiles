@@ -53,8 +53,6 @@
         disable_splash_rendering = true;
       };
 
-      xwayland.force_zero_scaling = true;
-
       "$mod" = "SUPER";
       "$terminal" = "alacritty";
       "$filemanager" = "pcmanfm";
@@ -64,10 +62,11 @@
       bind = [
         "$mod, E, exec, $filemanager"
         "$mod, Return, exec, $terminal"
-        "$mod, D, exec, pidof $menu | $menu"
+        "$mod, D, exec, pidof $menu || $menu"
         "$mod, C, killactive,"
         "$mod, L, exec, hyprlock"
         "$mod, V, togglefloating,"
+        ", F11, fullscreenstate, 2 2"
 
         "$mod, Print, exec, ${pkgs.grimblast}/bin/grimblast copy output"
         "SHIFT, Print, exec, ${pkgs.grimblast}/bin/grimblast copy area"
@@ -80,7 +79,7 @@
         ", XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl -p $musicplayer play-pause"
         ", XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl -p $musicplayer next"
 
-        ", XF86PowerOff, exec, pidof wofi || ${config.home.homeDirectory}/.local/bin/powermenu.sh"
+        ", XF86PowerOff, exec, pidof $menu || ${config.home.homeDirectory}/.local/bin/powermenu.sh"
       ]
       ++ (
         builtins.concatLists (builtins.genList (i:
