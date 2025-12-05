@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "libsciter"
     "discord"
     "spotify"
     "steam"
@@ -9,6 +10,7 @@
   ];
 
   home.packages = with pkgs; [
+    rustdesk
     blueman
     dconf
     devenv
