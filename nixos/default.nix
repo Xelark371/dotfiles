@@ -14,7 +14,10 @@
     ./vpn.nix
   ];
 
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    memoryPercent = 100;
+  };
 
   services.automatic-timezoned.enable = true;
   i18n.defaultLocale = "en_US.UTF-8";
