@@ -53,6 +53,8 @@
         disable_splash_rendering = true;
       };
 
+      xwayland.force_zero_scaling = true;
+
       "$mod" = "SUPER";
       "$terminal" = "alacritty";
       "$filemanager" = "pcmanfm";
@@ -110,13 +112,15 @@
 
       monitor = [
         "eDP-1, highres, auto, 1.25"
-        ", highrr, auto, auto"
+        ", highres, auto, 1, mirror, eDP-1"
       ];
 
       ecosystem = {
         no_update_news = true;
         no_donation_nag = true;
       };
+
+      windowrulev2 = "suppressevent maximize, class:.*";
     };
   };
 }
