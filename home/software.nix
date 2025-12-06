@@ -23,6 +23,7 @@
     libreoffice
     lutris
     mindustry
+    moonlight-qt
     neofetch
     networkmanagerapplet
     obs-studio

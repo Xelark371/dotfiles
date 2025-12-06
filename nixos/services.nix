@@ -5,6 +5,8 @@
   };
 
   services = {
+    sunshine.enable = true;
+
     earlyoom.enable = true;
     fwupd.enable = true;
 
