@@ -40,14 +40,25 @@
     secrets = import ./secrets.nix;
   in {
     nixosConfigurations = {
-      "maxPC" = nixpkgs.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs secrets; };
-        modules = [ ./nixos ];
+        modules = [
+          ./common
+          ./hosts/desktop
+         ];
+      };
+
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs secrets; };
+        modules = [
+          ./common
+          ./hosts/laptop
+         ];
       };
     };
 
     homeConfigurations = {
-      "max@maxPC" = home-manager.lib.homeManagerConfiguration {
+      max = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit inputs; };
         modules = [ ./home ];

@@ -1,11 +1,12 @@
-.PHONY: system home all
+.PHONY: desktop laptop home
 
 flake = "path:$(shell pwd)"
 
-all: system home
+desktop:
+	sudo nixos-rebuild switch --flake ${flake}#desktop
 
-system:
-	sudo nixos-rebuild switch --flake ${flake}
+laptop:
+	sudo nixos-rebuild switch --flake ${flake}#laptop
 
 home:
 	home-manager switch --flake ${flake}

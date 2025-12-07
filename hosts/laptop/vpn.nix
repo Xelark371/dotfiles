@@ -4,13 +4,13 @@
   networking.wireguard.interfaces = {
     wg0 = {
       ips = [ "192.168.27.65/32" ];
-      privateKey = secrets.wg-private;
+      privateKey = secrets.laptop.wg-private;
       mtu = 1360;
 
       peers = [
         {
           publicKey = "KH0Mzh3vnyGWgZrikz7IXifjhHB71/W0DlbHMJIz1k4=";
-          presharedKey = secrets.wg-preshared;
+          presharedKey = secrets.laptop.wg-preshared;
           endpoint = "91.168.138.207:62364";
 
           allowedIPs = [

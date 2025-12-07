@@ -6,12 +6,10 @@
     ./disk.nix
     ./display-manager.nix
     ./graphical.nix
-    ./hardware-configuration.nix
     ./nix.nix
     ./printers.nix
     ./services.nix
     ./users.nix
-    ./vpn.nix
   ];
 
   zramSwap = {
@@ -34,7 +32,6 @@
   };
 
   networking = {
-    hostName = "maxPC";
     networkmanager = {
       enable = true;
       wifi.powersave = true;

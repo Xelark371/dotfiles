@@ -27,6 +27,7 @@
 
     kernelModules = [
       "kvm-amd"
+      "uinput"
       "v4l2loopback"
     ];
   };
