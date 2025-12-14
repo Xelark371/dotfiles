@@ -11,7 +11,7 @@
         {
           publicKey = "KH0Mzh3vnyGWgZrikz7IXifjhHB71/W0DlbHMJIz1k4=";
           presharedKey = secrets.laptop.wg-preshared;
-          endpoint = "91.168.138.207:62364";
+          endpoint = "88.183.40.229:46523";
 
           allowedIPs = [
             "192.168.27.64/27"
