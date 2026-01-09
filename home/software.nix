@@ -30,7 +30,7 @@
     prismlauncher
     python3
     remmina
-    rustdesk
+    # rustdesk
     simple-scan
     spotify
     steam

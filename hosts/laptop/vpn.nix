@@ -1,9 +1,10 @@
 { config, pkgs, secrets, ... }:
 
 {
-  networking.wireguard.interfaces = {
+  networking.wg-quick.interfaces = {
     wg0 = {
-      ips = [ "192.168.27.65/32" ];
+      address = [ "192.168.27.65/32" ];
+      dns = [ "192.168.0.39" ];
       privateKey = secrets.laptop.wg-private;
       mtu = 1360;
 

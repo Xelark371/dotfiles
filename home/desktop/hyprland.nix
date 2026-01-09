@@ -18,7 +18,6 @@
     settings = {
       general = {
         border_size = 0;
-        no_border_on_floating = true;
         gaps_in = 2;
         gaps_out = 5;
         resize_on_border = true;
