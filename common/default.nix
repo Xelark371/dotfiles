@@ -14,7 +14,6 @@
 
   zramSwap = {
     enable = true;
-    memoryPercent = 100;
   };
 
   services.automatic-timezoned.enable = true;
