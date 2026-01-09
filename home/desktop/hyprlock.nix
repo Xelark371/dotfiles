@@ -18,7 +18,7 @@
       };
 
       background = {
-        path = "${./image.jpeg}";
+        path = "${../../assets/wallpapers/image.jpeg}";
         color = "rgba(0, 0, 0, 1.0)";
         blur_passes = 3;
         blur_size = 6;

@@ -1,9 +1,5 @@
 { pkgs, ... }:
-let
-  status = command : ''
-    ${pkgs.playerctl}/bin/playerctl -a status | grep -q "Playing" || ${command}
-  '';
-in
+
 {
   services.hypridle = {
     enable = true;
@@ -17,24 +13,24 @@ in
       listener = [
         {
           timeout = 600;
-          on-timeout = status "${pkgs.brightnessctl}/bin/brightnessctl -s set 0%";
+          on-timeout = "${pkgs.brightnessctl}/bin/brightnessctl -s set 0%";
           on-resume = "${pkgs.brightnessctl}/bin/brightnessctl -r";
         }
 
         {
           timeout = 900;
-          on-timeout = status "pidof hyprlock || hyprlock";
+          on-timeout = "pidof hyprlock || hyprlock";
         }
 
         {
           timeout = 1200;
-          on-timeout = status "hyprctl dispatch dpms off";
+          on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on; sunsetr -r";
         }
 
         {
           timeout = 1230;
-          on-timeout = status "systemctl suspend";
+          on-timeout = "systemctl suspend";
         }
       ];
     };

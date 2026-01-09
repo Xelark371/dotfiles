@@ -12,9 +12,7 @@
     ./users.nix
   ];
 
-  zramSwap = {
-    enable = true;
-  };
+  zramSwap.enable = true;
 
   services.automatic-timezoned.enable = true;
   i18n.defaultLocale = "en_US.UTF-8";
