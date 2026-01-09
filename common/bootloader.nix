@@ -22,10 +22,12 @@
     '';
 
     extraModulePackages = [
+      config.boot.kernelPackages.hid-tmff2
       config.boot.kernelPackages.v4l2loopback
     ];
 
     kernelModules = [
+      "hid-tmff2"
       "kvm-amd"
       "uinput"
       "v4l2loopback"
