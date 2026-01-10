@@ -2,7 +2,6 @@
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
     profiles.default = {
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
@@ -36,6 +35,7 @@
         };
 
         "vscord.app.name" = "Visual Studio Code";
+        "vscord.behaviour.suppressNotifications" = true;
 
         "window.commandCenter" = false;
 
