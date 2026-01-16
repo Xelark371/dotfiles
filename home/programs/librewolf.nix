@@ -20,7 +20,10 @@
 
           "extensions.autoDisableScopes" = 0;
 
+          "media.eme.enabled" = true;
+
           "privacy.resistFingerprinting" = false;
+          "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
 
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 

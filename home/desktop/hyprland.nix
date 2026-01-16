@@ -73,6 +73,7 @@
 
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        "ALT, M, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
         ", XF86AudioStop, exec, ${pkgs.playerctl}/bin/playerctl -p $musicplayer stop"
         ", XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl -p $musicplayer previous"
