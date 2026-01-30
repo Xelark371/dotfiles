@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
@@ -30,7 +30,7 @@
     prismlauncher
     python3
     remmina
-    # rustdesk
+    rustdesk
     simple-scan
     spotify
     steam
@@ -39,5 +39,7 @@
     viewnior
     virt-manager
     wl-clipboard
+
+    inputs.hytale.packages.${pkgs.system}.hytale-launcher
   ];
 }
