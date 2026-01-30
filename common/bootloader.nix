@@ -32,5 +32,7 @@
       "uinput"
       "v4l2loopback"
     ];
+
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 }
