@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   security = {
     polkit.enable = true;
@@ -21,6 +22,12 @@
         CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
         CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
       };
+    };
+
+    ananicy = {
+      enable = true;
+      package = pkgs.ananicy-cpp;
+      rulesProvider = pkgs.ananicy-rules-cachyos;
     };
 
     logind.settings.Login.HandlePowerKey = "ignore";
