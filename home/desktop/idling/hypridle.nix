@@ -5,8 +5,8 @@
     enable = true;
     settings = {
       general = {
-        lock_cmd = "pidof hyprlock || hyprlock";
-        before_sleep_cmd = "pidof hyprlock || hyprlock";
+        lock_cmd = "pidof swaylock || swaylock";
+        before_sleep_cmd = "pidof swaylock || swaylock";
         after_sleep_cmd = "hyprctl dispatch dpms on | brightnessctl -r";
       };
 
@@ -19,7 +19,7 @@
 
         {
           timeout = 900;
-          on-timeout = "pidof hyprlock || hyprlock";
+          on-timeout = "pidof swaylock || swaylock";
         }
 
         {

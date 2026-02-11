@@ -1,10 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  imports = [
-    ./hyprlock.nix
-  ];
-
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
@@ -64,7 +60,7 @@
         "$mod, Return, exec, $terminal"
         "$mod, D, exec, pidof $menu || $menu"
         "$mod, C, killactive,"
-        "$mod, L, exec, hyprlock"
+        "$mod, L, exec, swaylock"
         "$mod, V, togglefloating,"
         ", F11, fullscreenstate, 2 2"
 
