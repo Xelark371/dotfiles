@@ -4,8 +4,6 @@
     "discord"
     "libsciter"
     "spotify"
-    "steam"
-    "steam-unwrapped"
     "vscode"
   ];
 
@@ -20,7 +18,6 @@
     gnumake
     godot
     libreoffice
-    lutris
     mindustry
     moonlight-qt
     neofetch
@@ -28,12 +25,11 @@
     obs-studio
     pcmanfm
     prismlauncher
+    protonup-rs
     python3
     remmina
-    rustdesk
     simple-scan
     spotify
-    steam
     tor-browser
     ungit
     viewnior
