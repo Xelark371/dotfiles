@@ -6,6 +6,7 @@
   };
 
   services = {
+    xserver.videoDrivers = ["amdgpu"];
     earlyoom.enable = true;
     fwupd.enable = true;
 

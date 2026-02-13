@@ -5,30 +5,35 @@
     ./vscode.nix
   ];
 
-  programs.direnv = {
-    enable = true;
-    enableBashIntegration = true;
-  };
-
-  programs.bash.enable = true;
-
-  programs.git = {
-    enable = true;
-
-    settings = {
-      user = {
-        name = "Xelark371";
-        email = "maxencebressel.371@proton.me";
-      };
-
-      credential = {
-        helper = "store";
-      };
+  programs = {
+    bash.enable = true;
+    direnv = {
+      enable = true;
+      enableBashIntegration = true;
     };
 
-    ignores = [
-      ".devenv*"
-      "__pycache__"
-    ];
+    git = {
+      enable = true;
+
+      settings = {
+        user = {
+          name = "Xelark371";
+          email = "maxencebressel.371@proton.me";
+        };
+
+        credential = {
+          helper = "store";
+        };
+      };
+
+      ignores = [
+        ".devenv*"
+        "__pycache__"
+      ];
+    };
+    mangohud = {
+      enable = true;
+      enableSessionWide = true;
+    };
   };
 }

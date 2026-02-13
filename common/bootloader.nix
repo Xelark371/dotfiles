@@ -33,6 +33,6 @@
       "v4l2loopback"
     ];
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
   };
 }
