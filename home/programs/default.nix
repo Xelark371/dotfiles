@@ -17,7 +17,7 @@
 
       settings = {
         user = {
-          name = "Xelark371";
+          name = "Maxence";
           email = "maxencebressel.371@proton.me";
         };
 
@@ -31,9 +31,6 @@
         "__pycache__"
       ];
     };
-    mangohud = {
-      enable = true;
-      enableSessionWide = true;
-    };
+    mangohud.enable = true;
   };
 }
