@@ -40,6 +40,7 @@
 			in
 			{
 				enable = true;
+				createDirectories = true;
 
 				desktop = "${homeDir}/desktop";
 				documents = "${homeDir}/documents";
@@ -49,6 +50,10 @@
 				publicShare = "${homeDir}/public";
 				templates = "${homeDir}/templates";
 				videos = "${homeDir}/videos";
+
+				extraConfig = {
+					XDG_CLIPS_DIR = "${config.xdg.userDirs.videos}/clips";
+				};
 			};
 	};
 }

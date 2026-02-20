@@ -17,6 +17,8 @@
     gimp
     gnumake
     godot
+    gpu-screen-recorder-gtk
+    kdePackages.kdenlive
     libreoffice
     mindustry
     moonlight-qt

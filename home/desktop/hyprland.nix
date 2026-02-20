@@ -62,6 +62,7 @@
         "$mod, C, killactive,"
         "$mod, L, exec, swaylock"
         "$mod, V, togglefloating,"
+        # "$mod, Comma, exec, pkill -SIGUSR1 -f gpu-screen-recorder && ${pkgs.libnotify}/bin/notify-send 'GSR' 'Clip sauvegardé'"
         ", F11, fullscreenstate, 2 2"
 
         "$mod, Print, exec, ${pkgs.grimblast}/bin/grimblast copy output"

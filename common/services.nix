@@ -5,6 +5,8 @@
     rtkit.enable = true;
   };
 
+  programs.gpu-screen-recorder.enable = true;
+
   services = {
     xserver.videoDrivers = ["amdgpu"];
     earlyoom.enable = true;
