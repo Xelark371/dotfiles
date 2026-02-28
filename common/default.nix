@@ -60,6 +60,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    config.programs.gpu-screen-recorder.package
     home-manager
     htop
     xarchiver

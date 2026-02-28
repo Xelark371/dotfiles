@@ -4,6 +4,7 @@
     ./scripts
     ./hyprland.nix
     ./mako.nix
+    ./replay-buffer.nix
     ./swaylock.nix
     ./swww.nix
     ./theme.nix

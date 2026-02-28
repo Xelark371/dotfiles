@@ -1,11 +1,20 @@
 { pkgs, ... }:
 {
   security = {
-    polkit.enable = true;
+    polkit = {
+      enable = true;
+      extraConfig = ''
+        polkit.addRule(function(action, subject) {
+          if (action.id == "org.freedesktop.policykit.exec" &&
+              action.lookup("program") == "/run/current-system/sw/bin/gsr-kms-server" &&
+              subject.user == "max") {
+            return polkit.Result.YES;
+          }
+        });
+      '';
+    };
     rtkit.enable = true;
   };
-
-  programs.gpu-screen-recorder.enable = true;
 
   services = {
     xserver.videoDrivers = ["amdgpu"];
