@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  wallpaper = ../../assets/wallpapers/image.jpeg;
+  wallpaper = ../../assets/wallpapers/image.png;
 in
 {
   services.swww.enable = true;
@@ -17,6 +17,7 @@ in
     Service = {
       Type = "oneshot";
       ExecStart = "${pkgs.swww}/bin/swww img ${wallpaper} --resize crop --filter Lanczos3";
+      Restart = "on-failure";
     };
 
     Install.WantedBy = [ "graphical-session.target" ];
