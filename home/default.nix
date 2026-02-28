@@ -31,6 +31,7 @@
         "image/jpeg" = [ "viewnior.desktop" ];
         "image/png" = [ "viewnior.desktop" ];
         "text/plain" = [ "libreoffice.desktop" ];
+				"video/mp4" = [ "celluloid.desktop" ];
       };
     };
 

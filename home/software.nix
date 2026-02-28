@@ -4,11 +4,14 @@
     "discord"
     "libsciter"
     "spotify"
+    "steam"
+    "steam-unwrapped"
     "vscode"
   ];
 
   home.packages = with pkgs; [
     blueman
+    celluloid
     dconf
     devenv
     discord
@@ -17,9 +20,9 @@
     gimp
     gnumake
     godot
-    gpu-screen-recorder-gtk
     kdePackages.kdenlive
     libreoffice
+    lutris
     mindustry
     moonlight-qt
     neofetch
