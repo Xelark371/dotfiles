@@ -6,7 +6,7 @@
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     loader = {
       efi.canTouchEfiVariables = true;
-      timeout = null;
+      timeout = 10;
 
       grub = {
         enable = true;
