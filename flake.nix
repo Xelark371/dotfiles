@@ -4,7 +4,7 @@
     nur.url = "github:nix-community/NUR";
 
     hytale = {
-      url = "github:andreashgk/hytale-nix";
+      url = "github:JPyke3/hytale-launcher-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
