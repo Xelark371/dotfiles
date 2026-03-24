@@ -6,7 +6,11 @@
   ];
 
   programs = {
-    bash.enable = true;
+    bash = {
+      enable = true;
+      enableCompletion = true;
+    };
+
     direnv = {
       enable = true;
       enableBashIntegration = true;
