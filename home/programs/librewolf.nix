@@ -22,8 +22,11 @@
 
           "media.eme.enabled" = true;
 
+          "network.cookie.lifetimePolicy" = 0;
+
+          "privacy.clearOnShutdown.cookies" = false;
+          "privacy.clearOnShutdown.history" = false;
           "privacy.resistFingerprinting" = false;
-          "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
 
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
