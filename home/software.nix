@@ -21,6 +21,7 @@
     gnumake
     godot
     kdePackages.kdenlive
+    losslesscut-bin
     libreoffice
     lutris
     mindustry
