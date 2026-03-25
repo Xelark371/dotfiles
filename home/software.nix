@@ -28,7 +28,6 @@
     moonlight-qt
     neofetch
     networkmanagerapplet
-    obs-studio
     pcmanfm
     prismlauncher
     protonup-rs

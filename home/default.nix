@@ -12,10 +12,11 @@
 		homeDirectory = "/home/max";
 
 		sessionVariables = {
-			XCURSOR_SIZE = "24";
-			WLR_NO_HARDWARE_CURSORS = "1";
 			MOZ_ENABLE_WAYLAND = "1";
 			NIXOS_OZONE_WL = "1";
+			OBS_VKCAPTURE_INSERT_LAYER = "1";
+			WLR_NO_HARDWARE_CURSORS = "1";
+			XCURSOR_SIZE = "24";
 		};
 
 		stateVersion = "24.05";

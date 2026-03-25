@@ -2,6 +2,7 @@
   imports = [
     ./alacritty.nix
     ./librewolf.nix
+    ./obs.nix
     ./vscode.nix
   ];
 
