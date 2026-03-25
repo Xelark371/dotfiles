@@ -6,6 +6,7 @@
     ./disk.nix
     ./display-manager.nix
     ./graphical.nix
+    ./network.nix
     ./nix.nix
     ./printers.nix
     ./services.nix
@@ -25,13 +26,6 @@
       package = pkgs.qemu_kvm;
       runAsRoot = true;
       swtpm.enable = true;
-    };
-  };
-
-  networking = {
-    networkmanager = {
-      enable = true;
-      wifi.powersave = true;
     };
   };
 
