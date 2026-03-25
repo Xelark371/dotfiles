@@ -55,5 +55,25 @@
         }
       ];
     };
+
+    extraConfig.pipewire."99-input-masking" = {
+      "context.modules" = [
+        {
+          name = "libpipewire-module-loopback";
+          args = {
+            "node.description" = "Audio-Global";
+            "capture.props" = {
+              "node.name" = "audio_global_sink";
+              "media.class" = "Audio/Sink";
+              "audio.position" = [ "FL" "FR" ];
+            };
+            "playback.props" = {
+              "node.name" = "playback.audio_global_sink";
+              "node.passive" = true;
+            };
+          };
+        }
+      ];
+    };
   };
 }
