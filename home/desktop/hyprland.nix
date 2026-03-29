@@ -113,6 +113,8 @@
       monitor = [
         "eDP-1, highres, auto, 1.25"
         ", highres, auto, 1, mirror, eDP-1"
+        "DP-1, highrr, auto, 1"
+        "HDMI-A-1, highrr, auto-left, 1, transform, 1"
       ];
 
       ecosystem = {
