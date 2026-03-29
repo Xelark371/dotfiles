@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   gtk = {
     enable = true;
@@ -7,6 +7,8 @@
       package = pkgs.vimix-gtk-themes;
       name = "Vimix-dark-doder";
     };
+
+    gtk4.theme = config.gtk.theme;
 
     iconTheme = {
       package = pkgs.papirus-icon-theme;

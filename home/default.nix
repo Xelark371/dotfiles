@@ -19,7 +19,7 @@
 			XCURSOR_SIZE = "24";
 		};
 
-		stateVersion = "24.05";
+		stateVersion = "26.05";
 	};
 
 	xdg = {
@@ -43,6 +43,7 @@
 			{
 				enable = true;
 				createDirectories = true;
+				setSessionVariables = true;
 
 				desktop = "${homeDir}/desktop";
 				documents = "${homeDir}/documents";
@@ -54,7 +55,7 @@
 				videos = "${homeDir}/videos";
 
 				extraConfig = {
-					XDG_CLIPS_DIR = "${config.xdg.userDirs.videos}/clips";
+					CLIPS = "${config.xdg.userDirs.videos}/clips";
 				};
 			};
 	};

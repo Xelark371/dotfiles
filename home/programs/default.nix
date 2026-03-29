@@ -36,6 +36,7 @@
         "__pycache__"
       ];
     };
+
     mangohud.enable = true;
   };
 }

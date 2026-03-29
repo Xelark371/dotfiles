@@ -16,6 +16,7 @@
     devenv
     discord
     droidcam
+    fastfetch
     gcc
     gimp
     gnumake
@@ -26,7 +27,6 @@
     lutris
     mindustry
     moonlight-qt
-    neofetch
     networkmanagerapplet
     pcmanfm
     prismlauncher

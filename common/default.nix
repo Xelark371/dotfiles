@@ -16,7 +16,7 @@
   zramSwap.enable = true;
 
   services.automatic-timezoned.enable = true;
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "fr_FR.UTF-8";
   console.keyMap = "fr";
 
   virtualisation.libvirtd = {
@@ -85,5 +85,5 @@
     DefaultTasksMax = 10000;
   };
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "26.05";
 }
