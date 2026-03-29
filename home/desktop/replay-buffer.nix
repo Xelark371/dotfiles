@@ -14,12 +14,12 @@
           -w screen \
           -f 30 \
           -a 'rnnoise_source|default_output' \
-          -r 75 \
+          -r 70 \
           -c mp4 \
           -k av1 \
           -bm cbr \
           -q 1000 \
-          -o ${config.xdg.userDirs.extraConfig.XDG_CLIPS_DIR}
+          -o ${config.xdg.userDirs.extraConfig.CLIPS}
       '';
       Restart = "on-failure";
       RestartSec = "3s";
