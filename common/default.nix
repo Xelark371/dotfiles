@@ -19,13 +19,17 @@
   i18n.defaultLocale = "fr_FR.UTF-8";
   console.keyMap = "fr";
 
-  virtualisation.libvirtd = {
-    enable = true;
+  virtualisation = {
+    docker.enable = true;
 
-    qemu = {
-      package = pkgs.qemu_kvm;
-      runAsRoot = true;
-      swtpm.enable = true;
+    libvirtd = {
+      enable = true;
+
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+      };
     };
   };
 
