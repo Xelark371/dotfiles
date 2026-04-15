@@ -1,19 +1,14 @@
 { pkgs, ... }:
 {
   security = {
-    polkit = {
-      enable = true;
-      extraConfig = ''
-        polkit.addRule(function(action, subject) {
-          if (action.id == "org.freedesktop.policykit.exec" &&
-              action.lookup("program") == "/run/current-system/sw/bin/gsr-kms-server" &&
-              subject.user == "max") {
-            return polkit.Result.YES;
-          }
-        });
-      '';
-    };
+    polkit.enable = true;
     rtkit.enable = true;
+    wrappers.gsr-kms-server = {
+      owner = "root";
+      group = "root";
+      capabilities = "cap_sys_admin+ep";
+      source = "${pkgs.gpu-screen-recorder}/bin/gsr-kms-server";
+    };
   };
 
   services = {
