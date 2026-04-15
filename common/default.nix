@@ -89,5 +89,5 @@
     DefaultTasksMax = 10000;
   };
 
-  system.stateVersion = "26.05";
+  system.stateVersion = "24.05";
 }

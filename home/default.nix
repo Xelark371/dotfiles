@@ -19,7 +19,7 @@
 			XCURSOR_SIZE = "24";
 		};
 
-		stateVersion = "26.05";
+		stateVersion = "24.05";
 	};
 
 	xdg = {
