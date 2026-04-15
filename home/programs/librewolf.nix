@@ -17,6 +17,10 @@
 
         settings = {
           "browser.translations.automaticallyPopup" = false;
+          "browser.tabs.unloadOnLowMemory" = true;
+
+          "dom.ipc.processCount" = 4;
+          "dom.webgpu.enabled" = true;
 
           "extensions.autoDisableScopes" = 0;
 
