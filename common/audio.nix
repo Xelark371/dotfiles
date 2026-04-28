@@ -1,8 +1,7 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ rnnoise-plugin ];
-
   services.pipewire = {
+    extraLadspaPackages = [ pkgs.rnnoise-plugin ];
     enable = true;
 
     alsa = {
@@ -25,7 +24,7 @@
                 {
                   type = "ladspa";
                   name = "rnnoise";
-                  plugin = "${pkgs.rnnoise-plugin}/lib/ladspa/librnnoise_ladspa.so";
+                  plugin = "librnnoise_ladspa";
                   label = "noise_suppressor_mono";
                   control = {
                     "VAD Threshold (%)" = 90.0;
@@ -74,6 +73,12 @@
           };
         }
       ];
+    };
+
+    wireplumber.extraConfig."99-rnnoise-default-source" = {
+      "wireplumber.settings" = {
+        "default.audio.source" = "rnnoise_source";
+      };
     };
   };
 }
