@@ -40,7 +40,7 @@
       };
 
       cursor = {
-        no_hardware_cursors = true;
+        no_hardware_cursors = false;
       };
 
       misc = {
