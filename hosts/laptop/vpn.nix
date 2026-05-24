@@ -4,7 +4,7 @@
   networking.wg-quick.interfaces = {
     wg0 = {
       address = [ "192.168.27.65/32" ];
-      dns = [ "192.168.0.39" ];
+      dns = [ "192.168.0.161" ];
       privateKey = secrets.laptop.wg-private;
       mtu = 1360;
 
