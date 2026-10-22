@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   users.users = {
     max = {
@@ -9,6 +11,7 @@
         "libvirtd"
         "networkmanager"
         "uinput"
+        "kvm"
         "wheel"
       ];
     };
