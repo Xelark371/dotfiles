@@ -1,8 +1,8 @@
 { pkgs, lib, inputs, ... }:
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "claude-code"
     "discord"
+    "discord-unwrapped"
     "libsciter"
     "spotify"
     "steam"
@@ -14,7 +14,6 @@
     blueman
     brave
     celluloid
-    claude-code
     dbeaver-bin
     dconf
     devenv
@@ -29,7 +28,6 @@
     kdePackages.kdenlive
     losslesscut-bin
     libreoffice
-    # lutris
     mindustry
     moonlight-qt
     networkmanagerapplet
@@ -46,7 +44,5 @@
     viewnior
     virt-manager
     wl-clipboard
-
-    # inputs.hytale.packages.${pkgs.system}.hytale-launcher
   ];
 }

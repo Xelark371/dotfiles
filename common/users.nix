@@ -1,6 +1,9 @@
+{ pkgs, ... }:
+
 {
   users.users = {
     max = {
+      password = "issouissou";
       isNormalUser = true;
       extraGroups = [
         "docker"
@@ -8,6 +11,7 @@
         "libvirtd"
         "networkmanager"
         "uinput"
+        "kvm"
         "wheel"
       ];
     };

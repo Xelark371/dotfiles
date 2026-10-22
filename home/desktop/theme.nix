@@ -4,8 +4,8 @@
     enable = true;
 
     theme = {
-      package = pkgs.vimix-gtk-themes;
-      name = "Vimix-dark-doder";
+      package = pkgs.orchis-theme;
+      name = "Orchis-Grey-Dark";
     };
 
     gtk4.theme = config.gtk.theme;

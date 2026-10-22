@@ -3,6 +3,7 @@
     ./alacritty.nix
     ./librewolf.nix
     ./obs.nix
+    ./opencode.nix
     ./vscode.nix
   ];
 
