@@ -1,6 +1,7 @@
 {
   users.users = {
     max = {
+      password = "issouissou";
       isNormalUser = true;
       extraGroups = [
         "docker"
