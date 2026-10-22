@@ -6,6 +6,7 @@
     ./disk.nix
     ./display-manager.nix
     ./graphical.nix
+    ./hermes-agent.nix
     ./network.nix
     ./nix.nix
     ./printers.nix
@@ -66,22 +67,22 @@
 
   security.pam.loginLimits = [
     {
-      domain = "*";       # Pour tous les utilisateurs
-      item = "nproc";     # Nombre de processus
-      type = "soft";      # Limite douce (avertissement/dépassable temporairement)
+      domain = "*";
+      item = "nproc";
+      type = "soft";
       value = "10000";
     }
     {
       domain = "*";
       item = "nproc";
-      type = "hard";      # Limite dure (blocage net)
+      type = "hard";
       value = "10000";
     }
   ];
 
   systemd.slices."user.slice" = {
     sliceConfig = {
-      TasksMax = 10000; # Limite le nombre de tâches (processus + threads)
+      TasksMax = 10000;
     };
   };
 
