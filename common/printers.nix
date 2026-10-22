@@ -3,6 +3,7 @@
     printing = {
       enable = true;
       browsing = true;
+      browsed.enable = true;
 
       browsedConf = ''
         BrowseDNSSDSubTypes _cups,_print
@@ -16,6 +17,7 @@
     avahi = {
       enable = true;
       nssmdns4 = true;
+      openFirewall = true;
     };
   };
 
