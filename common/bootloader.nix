@@ -1,19 +1,25 @@
 { pkgs, config, ... }:
 {
-  environment.systemPackages = [ pkgs.catppuccin-grub ];
-
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     loader = {
       efi.canTouchEfiVariables = true;
       timeout = 10;
 
-      grub = {
+      limine = {
         enable = true;
-        efiSupport = true;
-        useOSProber = true;
-        devices = [ "nodev" ];
-        configurationLimit = 5;
+        maxGenerations = 5;
+        secureBoot = {
+          enable = true;
+          autoGenerateKeys = true;
+          autoEnrollKeys.enable = true;
+        };
+
+        extraEntries = ''
+          /Windows
+          protocol: efi
+          path: uuid(d20469c6-8bc1-449c-861d-65e0fe0948ba):/EFI/Microsoft/Boot/bootmgfw.efi
+        '';
       };
     };
 
