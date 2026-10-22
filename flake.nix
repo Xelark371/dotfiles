@@ -1,12 +1,8 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     nur.url = "github:nix-community/NUR";
-
-    hytale = {
-      url = "github:JPyke3/hytale-launcher-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     disko = {
       url = "github:nix-community/disko/latest";
@@ -27,6 +23,8 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hermes-agent.url = "github:NousResearch/hermes-agent";
   };
 
   outputs = {
